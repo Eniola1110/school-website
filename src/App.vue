@@ -5,6 +5,7 @@ import Nav from './Components/Nav.vue'
 <template>
   <h1>Hi</h1>
   <Nav />
+  <router-view />
 </template>
 
 <style scoped></style>
