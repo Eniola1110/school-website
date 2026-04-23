@@ -12,12 +12,12 @@ import { RouterLink } from 'vue-router';
                 </RouterLink>
             </div>
             <div class="links">
-            <RouterLink to="/"></RouterLink>
-            <RouterLink to="/About">About Us</RouterLink>
-            <RouterLink to="/Program">Program</RouterLink>
-            <RouterLink to="/Admission">Admission</RouterLink>
-            <RouterLink to="/Testimonial">Testimonial</RouterLink>
-            <RouterLink to="/Contact">Contact Us</RouterLink>
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/about">About Us</RouterLink>
+            <RouterLink to="/program">Program</RouterLink>
+            <RouterLink to="/admission">Admission</RouterLink>
+            <RouterLink to="/testimonial">Testimonial</RouterLink>
+            <RouterLink to="/contact">Contact Us</RouterLink>
             </div>
         </div>
     </nav>
