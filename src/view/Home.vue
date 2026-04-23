@@ -4,7 +4,10 @@
 
 <template>
     <div>
-        <h1>Home</h1>
+        <section id="Home">
+            <h1>Home</h1>
+        </section>
+       
     </div>
 </template>
 
