@@ -7,12 +7,12 @@ import { RouterLink } from 'vue-router';
         <div class="navbar">
             <div class="logo">
                 <img src="../assets/ascendlogo.png" alt="">
-                <RouterLink to="/Home">
-                    Ascend school hub
+                <RouterLink to="/">
+                    Ascend School
                 </RouterLink>
             </div>
             <div class="links">
-            <RouterLink to="/Home">Home</RouterLink>
+            <RouterLink to="/"></RouterLink>
             <RouterLink to="/About">About Us</RouterLink>
             <RouterLink to="/Program">Program</RouterLink>
             <RouterLink to="/Admission">Admission</RouterLink>
@@ -24,7 +24,6 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Miniver&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
     :root{
         --primary: #6d28d9;
         --secondary: #a78bfa;
@@ -70,5 +69,6 @@ import { RouterLink } from 'vue-router';
     font-weight: bold;
     font-size: 1.3rem;
    }
+
    
 </style>

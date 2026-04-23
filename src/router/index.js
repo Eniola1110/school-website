@@ -23,7 +23,7 @@ const routes = [
         component: Contact,
     },
     {
-        path: "/Home",
+        path: "/",
         name: Home,
         component: Home,
     },
@@ -41,7 +41,7 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes
 })
 
 export default router
