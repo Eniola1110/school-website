@@ -12,6 +12,10 @@ import Footer from '@/components/Footer.vue';
                 <RouterLink to="/Contact"><button class="btn"><i class="fa fa-phone" aria-hidden="true"></i>
                 Call Us Now</button></RouterLink>
             </div>
+            <div class="bridge">
+                <p class="bet">We Ensure better education for a better world.</p>
+                <p class="our">Our cutting-edge curriculum is designed to empower students with the knowledge, skills, and experience needed to excel in the dynamic field of education.</p>
+            </div>
             <section>
                <Footer/>
             </section>
@@ -23,6 +27,7 @@ import Footer from '@/components/Footer.vue';
     .banner{
         padding: 2rem;
         font-family: "Open Sans", sans-serif;
+        height:60vh;
     }
      .welcome{
         background-color: rgb(134, 134, 206);
@@ -63,5 +68,15 @@ import Footer from '@/components/Footer.vue';
         color: var(--secondary);
         font-size: 1rem;
         border-radius: 1rem;
+     }
+     .bridge{
+        text-align: center;
+        color: var(--secondary);
+        background-color: rgb(165, 165, 198);
+     }
+     .bet{
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-align: center;
      }
 </style>
