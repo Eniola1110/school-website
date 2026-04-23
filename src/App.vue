@@ -1,11 +1,15 @@
 <script setup>
-import Nav from './Components/Nav.vue'
+import Nav from './components/Nav.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <h1>Hi</h1>
-  <Nav />
-  <router-view />
+  <div>
+      <Nav />
+      <Footer />
+      <router-view />
+  </div>
+  
 </template>
 
 <style scoped></style>
