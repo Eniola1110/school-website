@@ -5,7 +5,9 @@
 <template>
 
     <div>
-         <p>This is amazing</p>
+         <header>
+            <h1>Let's see</h1>
+         </header>
     </div>
 </template>
 
