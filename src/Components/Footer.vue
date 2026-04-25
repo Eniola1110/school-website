@@ -22,5 +22,6 @@ footer{
 }
 footer p{
     font-size: 1.2rem;
+    color: var(--secondary);
 }
 </style>

@@ -13,7 +13,6 @@ import Footer from '@/components/Footer.vue';
                 Call Us Now</button></RouterLink>
             </div>
             <div class="bridge">
-               <!-- <img src="../assets/wave.png" alt="" class="wave-shape"> -->
                 <div class="grid">
                   <div class="grid1">
                      <p>Quality And Excellence</p>
@@ -25,6 +24,54 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
                   </div>
                 </div>
             </div>
+            <!-- stats -->
+            <div class="stats">
+               <div>
+                  <h3>20+</h3>
+                  <p>Years of Excellence</p>
+               </div>
+               <div>
+                  <h3>500+</h3>
+                  <p>Students</p>
+               </div>
+               <div>
+                  <h3>100+</h3>
+                  <p>Qualified Staff</p>
+               </div>
+               <div>
+                  <h3>95%</h3>
+                  <p>Success Rate</p>
+               </div>
+            </div>
+            <!-- programs -->
+             <div class="section">
+               <div class="programs">
+                  <div class="program">Nursery</div>
+                  <div class="program">Primary</div>
+                  <div class="program">Secondary</div>
+               </div>
+               <RouterLink to="/program">
+                  <button class="btn">View All Programs</button>
+               </RouterLink>
+             </div>
+             <!-- why choose us -->
+              <div class="section">
+               <h2>Why Choose Us</h2>
+               <ul>
+                  <li>Qualified Teachers</li>
+                  <li>Modern Learning Facilities</li>
+                  <li>Safe Environments</li>
+                  <li>Strong moral Values</li>
+                  <li>Technology-Based Learning</li>
+               </ul>
+              </div>
+              <!-- CTA -->
+               <div class="cta">
+                  <h2>Enroll Your Child Today</h2>
+                  <RouterLink to="/admission">
+                     <button class="btn primary">Apply Now</button>
+                  </RouterLink>
+               </div>
             <section>
                <Footer/>
             </section>
@@ -36,16 +83,16 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
    #home{
       font-family: "Open Sans", sans-serif;
    }
-   @keyframes slideInLeft{
+   /* @keyframes slideInLeft{
       0%{
          transform: translateX(-100px);
       }
       100%{
          transform: translateX(0);
       }
-   }
+   } */
     .banner{
-        animation: slideInLeft 1s ease-out;
+        /* animation: slideInLeft 1s ease-out; */
         padding: 2rem;
         height:70vh;
         position: relative;
@@ -97,21 +144,10 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
         url(../assets/brige.png);
         background-size: cover;
         background-repeat: no-repeat;
-        height: 60vh;
+        min-height: 60vh;
         align-items: center;
         justify-content: center;
      }
-     /* .wave-shape{
-      position: absolute;
-      bottom: 1rem;
-      left: 0;
-      width: 100%;
-      height: 1.5rem;
-      display: block;
-      z-index: 1;
-      
-     }
-      */
      .grid{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -130,4 +166,65 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
       color: var(--white);
       line-height: 2rem;
      }
+     .section{
+      padding: 3rem 2rem;
+      text-align: center;
+     }
+     .section h2{
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+     }
+     .stats{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) ;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      color: var(--secondary);
+      justify-content: space-between;
+     }
+     .stats h3{
+      font-size: 3rem;
+      color: var(--secondary);
+     }
+     .stats p{
+      font-size: 1rem;
+      color: var(--white);
+     }
+     /* mobile */
+     @media (max-width: 768px){
+      .banner{
+         height: 60vh;
+         padding: 2rem 1rem;
+      }
+      .welcome{
+         width: fit-content;
+         font-size: 0.7rem;
+         padding: 0.4rem 1rem;
+      }
+      .banner h1{
+         font-size: 2.5rem;
+      }
+      .great{
+         font-size: 1.2rem;
+      }
+      .empower{
+         font-size: 1rem;
+      }
+     .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 1rem;
+     }
+     .grid1{
+      font-size: 4rem;
+     }
+     .grid2{
+      font-size: 1rem;
+      text-align: start;
+      line-height: 1.6rem;
+     }
+     }
+
 </style>

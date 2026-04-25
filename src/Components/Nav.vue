@@ -89,7 +89,10 @@ const isOpen = ref(false);
         display: block;
         cursor: pointer;
         color: var(--primary);
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        }
+    .navbar{
+        padding: 0.5rem;
     }
     .links{
         position: absolute;
