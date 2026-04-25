@@ -14,7 +14,6 @@ import Nav from './components/Nav.vue'
 *{
   padding: 0;
   margin: 0;
-  box-shadow: 0;
 }
 :root{
         --primary: #6d28d9;
@@ -25,6 +24,6 @@ import Nav from './components/Nav.vue'
       }
 body{
   background: var(--primary);
-  font-family: ;
+  min-height: 200vh;
 }
 </style>

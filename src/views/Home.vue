@@ -19,7 +19,7 @@ import Footer from '@/components/Footer.vue';
                      <p>Quality And Excellence</p>
                   </div>
                   <div class="grid2">
-                     <p>We are passionately devoted to the progress of humanity, achieved through high-quality education, dedicated service, and unwavering commitment.
+                     <p>We are passionately devoted to the progress of humanity, achieved through high-quality education, dedicated service, and unwavering commitment. <br>
 Our primary focus lies in illuminating the path forward, while nourishing our endeavors with love. In this era of heightened awareness, we firmly believe that a comprehensive education holds the key to overcoming life's myriad challenges. With the radiance of our knowledge and the warmth of our                    compassion, we aspire to attain nothing less than the very best.
                       </p>
                   </div>
@@ -34,7 +34,6 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
 
 <style scoped>
    #home{
-      animation: slideInLeft 1s ease-out;
       font-family: "Open Sans", sans-serif;
    }
    @keyframes slideInLeft{
@@ -46,6 +45,7 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
       }
    }
     .banner{
+        animation: slideInLeft 1s ease-out;
         padding: 2rem;
         height:70vh;
         position: relative;
@@ -93,14 +93,13 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
      }
      .bridge{
         text-align: center;
-        background: linear-gradient(rgba(214, 150, 245, 0.8),rgba(0,0,0,0)60%);
-        /* url(../assets/brige.png); */
+        background: linear-gradient(to right,  rgba(186, 132, 214, 0.8)90%,rgba(0,0,0,0)100%),
+        url(../assets/brige.png);
         background-size: cover;
         background-repeat: no-repeat;
         height: 60vh;
         align-items: center;
         justify-content: center;
-        padding: 5rem 4rem;
      }
      /* .wave-shape{
       position: absolute;
@@ -117,16 +116,18 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 3rem;
+      padding: 5rem 4rem;
      }
      .grid1{
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: bold;
       text-align: center;
-      color: var(--secondary);
+      color: var(--primary);
      }
      .grid2{
-      font-size: 1.5rem;
-      text-align: justify;
+      font-size: 1rem;
+      text-align: start;
       color: var(--white);
+      line-height: 2rem;
      }
 </style>

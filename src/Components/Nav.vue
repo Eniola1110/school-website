@@ -1,5 +1,8 @@
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+
+const isOpen = ref(false);
 </script>
 
 <template>
@@ -11,7 +14,9 @@ import { RouterLink } from 'vue-router';
                     Ascend School
                 </RouterLink>
             </div>
-            <div class="links">
+            <div class="menu-icon" @click="isOpen = !isOpen"><i class="fa fa-bars" aria-hidden="true"></i>
+           </div>
+            <div class="links" :class="{ active: isOpen }">
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About Us</RouterLink>
             <RouterLink to="/program">Program</RouterLink>
@@ -23,7 +28,7 @@ import { RouterLink } from 'vue-router';
     </nav>
 </template>
 
-<style scoped>
+<style>
     :root{
         --primary: #6d28d9;
         --secondary: #a78bfa;
@@ -31,15 +36,21 @@ import { RouterLink } from 'vue-router';
         --dark-text: #111827;
         --white: #ffffff;
     }
+    .menu-icon{
+        display: none;
+    }
+    nav{
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
    .navbar{
     background: var(--secondary);
     display: flex;
     justify-content: space-between;
-    position: sticky;
     padding: 1.2rem;
     font-family: "Open Sans", sans-serif;
-    z-index: 1;
-    position: sticky;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
    }
     
    .logo{
@@ -71,6 +82,30 @@ import { RouterLink } from 'vue-router';
     font-weight: bold;
     font-size: 1.3rem;
    }
-
+  
+   /* Mobile */
+   @media (max-width: 768px){
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        color: var(--primary);
+        font-size: 1.8rem;
+    }
+    .links{
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--secondary);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        gap: 1.5rem;
+        display: none;
+    }
+    .links.active{
+        display: flex;
+    }
+   }
    
 </style>
