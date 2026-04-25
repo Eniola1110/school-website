@@ -38,6 +38,8 @@ import { RouterLink } from 'vue-router';
     position: sticky;
     padding: 1.2rem;
     font-family: "Open Sans", sans-serif;
+    z-index: 1;
+    position: sticky;
    }
     
    .logo{

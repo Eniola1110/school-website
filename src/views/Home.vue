@@ -8,13 +8,22 @@ import Footer from '@/components/Footer.vue';
                 <p class="welcome"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Welcome to Excellence</p>
                 <h1>Ascend <span>School</span></h1>
                 <p class="great">"Inspiring Greatness"</p>
-                <p class="empower">Empowering young minds through world-class education, innovation, and character development since 2005. </p>
+                <p class="empower">Empowering young minds through world-class education,<br> innovation, and character development since 2005. </p>
                 <RouterLink to="/Contact"><button class="btn"><i class="fa fa-phone" aria-hidden="true"></i>
                 Call Us Now</button></RouterLink>
             </div>
             <div class="bridge">
-                <p class="bet">We Ensure better education for a better world.</p>
-                <p class="our">Our cutting-edge curriculum is designed to empower students with the knowledge, skills, and experience needed to excel in the dynamic field of education.</p>
+               <!-- <img src="../assets/wave.png" alt="" class="wave-shape"> -->
+                <div class="grid">
+                  <div class="grid1">
+                     <p>Quality And Excellence</p>
+                  </div>
+                  <div class="grid2">
+                     <p>We are passionately devoted to the progress of humanity, achieved through high-quality education, dedicated service, and unwavering commitment.
+Our primary focus lies in illuminating the path forward, while nourishing our endeavors with love. In this era of heightened awareness, we firmly believe that a comprehensive education holds the key to overcoming life's myriad challenges. With the radiance of our knowledge and the warmth of our                    compassion, we aspire to attain nothing less than the very best.
+                      </p>
+                  </div>
+                </div>
             </div>
             <section>
                <Footer/>
@@ -24,10 +33,22 @@ import Footer from '@/components/Footer.vue';
 </template>
 
 <style scoped>
+   #home{
+      animation: slideInLeft 1s ease-out;
+      font-family: "Open Sans", sans-serif;
+   }
+   @keyframes slideInLeft{
+      0%{
+         transform: translateX(-100px);
+      }
+      100%{
+         transform: translateX(0);
+      }
+   }
     .banner{
         padding: 2rem;
-        font-family: "Open Sans", sans-serif;
-        height:60vh;
+        height:70vh;
+        position: relative;
     }
      .welcome{
         background-color: rgb(134, 134, 206);
@@ -38,6 +59,7 @@ import Footer from '@/components/Footer.vue';
         border-radius: 2rem;
         font-weight: bold;
         font-size: 0.8rem;
+        color: var(--white);
      }
      .welcome i{
         padding-right: 1rem;
@@ -45,20 +67,20 @@ import Footer from '@/components/Footer.vue';
 
      .banner h1{
         padding-top: 2rem;
-        font-size: 4rem;
+        font-size: 5rem;
         color: var(--secondary);
      }
      .banner span{
         color: var(--white);
      }
      .great{
-        font-size: 1.5rem ;
+        font-size: 1.8rem ;
         color: rgb(228, 218, 218);
         font-weight: bold;
      }
      .empower{
         color: rgb(253, 241, 241);
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding-top: 1rem;
      }
      .btn{
@@ -71,12 +93,40 @@ import Footer from '@/components/Footer.vue';
      }
      .bridge{
         text-align: center;
-        color: var(--secondary);
-        background-color: rgb(165, 165, 198);
+        background: linear-gradient(rgba(214, 150, 245, 0.8),rgba(0,0,0,0)60%);
+        /* url(../assets/brige.png); */
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 60vh;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 4rem;
      }
-     .bet{
-        font-size: 3.5rem;
-        font-weight: bold;
-        text-align: center;
+     /* .wave-shape{
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      width: 100%;
+      height: 1.5rem;
+      display: block;
+      z-index: 1;
+      
+     }
+      */
+     .grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+     }
+     .grid1{
+      font-size: 5rem;
+      font-weight: bold;
+      text-align: center;
+      color: var(--secondary);
+     }
+     .grid2{
+      font-size: 1.5rem;
+      text-align: justify;
+      color: var(--white);
      }
 </style>
