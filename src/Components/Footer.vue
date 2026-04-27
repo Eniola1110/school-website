@@ -17,7 +17,7 @@
 
             <div class="grid2">
                 <h2>Quick Links</h2>
-            <div class="links">
+            <div class="footer-links">
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About Us</RouterLink>
             <RouterLink to="/program">Program</RouterLink>
@@ -75,7 +75,7 @@ footer{
     margin-bottom: 1rem;
     color: var(--secondary);
 }
-.grid2 .links {
+.grid2 .footer-links {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -113,7 +113,7 @@ footer > p {
 .grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
-.grid2 .links{
+.grid2 .footer-links{
   display: flex;
   flex-direction: column;
   gap: 10px;
