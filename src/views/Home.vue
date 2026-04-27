@@ -19,7 +19,7 @@ import Footer from '@/components/Footer.vue';
                   </div>
                   <div class="grid2">
                      <p>We are passionately devoted to the progress of humanity, achieved through high-quality education, dedicated service, and unwavering commitment. <br>
-Our primary focus lies in illuminating the path forward, while nourishing our endeavors with love. In this era of heightened awareness, we firmly believe that a comprehensive education holds the key to overcoming life's myriad challenges. With the radiance of our knowledge and the warmth of our                    compassion, we aspire to attain nothing less than the very best.
+                     Our primary focus lies in illuminating the path forward, while nourishing our endeavors with love. In this era of heightened awareness, we firmly believe that a comprehensive education holds the key to overcoming life's myriad challenges. With the radiance of our knowledge and the warmth of our compassion, we aspire to attain nothing less than the very best.
                       </p>
                   </div>
                 </div>
@@ -161,10 +161,11 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
      }
      .bridge{
         text-align: center;
-        background: linear-gradient(to right,  rgba(141, 29, 185, 0.1)50%,rgba(39, 6, 224, 0)60%),
-        url(../assets/bridge.png);
-        background-size: cover;
-        background-repeat: no-repeat;
+        /* background: linear-gradient(to right,  rgba(141, 29, 185, 0.1)50%,rgba(39, 6, 224, 0)60%),
+        url(../assets/bridge.png); */
+        /* background-size: cover; */
+        /* background-repeat: no-repeat; */
+        background: var(--white);
         min-height: 60vh;
         align-items: center;
         justify-content: center;
@@ -174,6 +175,7 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
       grid-template-columns: repeat(2, 1fr);
       gap: 3rem;
       padding: 5rem 4rem;
+      align-items: center;
      }
      .grid1{
       font-size: 4rem;

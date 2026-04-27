@@ -111,7 +111,7 @@ footer > p {
 /* mobile */
 @media (max-width: 768px){
 .grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(1, 1fr);
 }
 .grid2 .footer-links{
   display: flex;
@@ -129,5 +129,9 @@ footer > p {
     margin-top: 1rem;
 }
 }
-
+@media (min-width: 769px) and (max-width: 1130px){
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 </style>

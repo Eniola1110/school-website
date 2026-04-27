@@ -107,5 +107,14 @@ const isOpen = ref(false);
         display: flex;
     }
    }
+
+   @media (min-width: 769px) and (max-width: 1130px){
+    .links{
+        gap: 2rem;
+    }
+    .links a {
+    font-size: 0.7rem;
+   }
+   }
    
 </style>
