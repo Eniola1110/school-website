@@ -48,11 +48,10 @@ const isOpen = ref(false);
     background: var(--secondary);
     display: flex;
     justify-content: space-between;
-    padding: 1.2rem;
+    padding: 1rem;
     font-family: "Open Sans", sans-serif;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
    }
-    
    .logo{
     display: flex;
     align-items: center;
@@ -60,7 +59,6 @@ const isOpen = ref(false);
    }
    .logo img{
     width: 4rem;
-    border-radius: 2rem;
    } 
 
    .logo a{
@@ -82,7 +80,6 @@ const isOpen = ref(false);
     font-weight: bold;
     font-size: 1.3rem;
    }
-  
    /* Mobile */
    @media (max-width: 768px){
     .menu-icon{

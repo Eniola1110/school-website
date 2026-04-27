@@ -31,8 +31,8 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
                   <p>Years of Excellence</p>
                </div>
                <div>
-                  <h3>500+</h3>
-                  <p>Students</p>
+                  <h3>1500+</h3>
+                  <p>Students Enrolled</p>
                </div>
                <div>
                   <h3>100+</h3>
@@ -45,10 +45,24 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
             </div>
             <!-- programs -->
              <div class="section">
+               <h2>Programs</h2>
                <div class="programs">
-                  <div class="program">Nursery</div>
-                  <div class="program">Primary</div>
-                  <div class="program">Secondary</div>
+                  <div class="program-card">
+                     <i class="fa fa-book" aria-hidden="true"></i>
+                     <h3>Nursery Education</h3>
+                     <p>Strong foundation in literacy, numeracy, and critical thinking for ages 4-11, while nurturing creativity in a supportive environment.
+                     </p>
+                  </div>
+                  <div class="program-card">
+                     <i class="fa fa-book" aria-hidden="true"></i>
+                     <h3>Primary Education</h3>
+                     <p>Building on foundational knowledge with a focus on academic growth, creativity, and problem-solving skills.</p>
+                  </div>
+                  <div class="program-card">
+                     <i class="fa fa-book" aria-hidden="true"></i>
+                     <h3>Secondary Education</h3>
+                     <p>Advanced academic training that develops critical thinking and prepares students for higher education and future careers.</p>
+                  </div>
                </div>
                <RouterLink to="/program">
                   <button class="btn">View All Programs</button>
@@ -81,18 +95,18 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
 
 <style scoped>
    #home{
+      animation: slideInLeft 1s ease-out;
       font-family: "Open Sans", sans-serif;
    }
-   /* @keyframes slideInLeft{
+   @keyframes slideInLeft{
       0%{
          transform: translateX(-100px);
       }
       100%{
          transform: translateX(0);
       }
-   } */
+   }
     .banner{
-        /* animation: slideInLeft 1s ease-out; */
         padding: 2rem;
         height:70vh;
         position: relative;
@@ -135,13 +149,20 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
         margin-top: 2rem;
         border: 1px solid  rgb(151, 151, 247);
         color: var(--secondary);
-        font-size: 1rem;
+        font-size: 1.2rem;
         border-radius: 1rem;
+        font-weight: bold;
+        transition: 1s ease-in-out;
+     }
+     .btn:hover{
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
      }
      .bridge{
         text-align: center;
-        background: linear-gradient(to right,  rgba(186, 132, 214, 0.8)90%,rgba(0,0,0,0)100%),
-        url(../assets/brige.png);
+        background: linear-gradient(to right,  rgba(141, 29, 185, 0.1)50%,rgba(39, 6, 224, 0)60%),
+        url(../assets/bridge.png);
         background-size: cover;
         background-repeat: no-repeat;
         min-height: 60vh;
@@ -158,39 +179,100 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
       font-size: 4rem;
       font-weight: bold;
       text-align: center;
-      color: var(--primary);
+      color: var(--secondary);
      }
      .grid2{
-      font-size: 1rem;
+      font-size: 1.2rem;
       text-align: start;
-      color: var(--white);
+      color: var(--primary);
       line-height: 2rem;
      }
      .section{
-      padding: 3rem 2rem;
+      padding: 2rem 1rem;
       text-align: center;
      }
      .section h2{
       font-size: 2rem;
       margin-bottom: 1rem;
       color: var(--secondary);
+      text-align: center;
      }
      .stats{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) ;
-      gap: 2rem;
-      padding: 3rem 2rem;
-      color: var(--secondary);
-      justify-content: space-between;
+      background: var(--secondary);
+      grid-template-columns: repeat(4, 1fr) ;
+      text-align: center;
+      padding: 2rem;
      }
      .stats h3{
       font-size: 3rem;
-      color: var(--secondary);
+      color: var(--primary);
      }
      .stats p{
       font-size: 1rem;
       color: var(--white);
      }
+     .programs{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+     }
+     .program-card{
+      background: var(--white);
+      margin: 1rem;      
+      padding: 1rem 3rem;
+      text-align: start;
+      border-radius: 1rem;
+      border: 1px solid var(--secondary);
+      transition: 1s ease-in;
+     }
+     .program-card:hover{
+      background: var(--primary);
+      cursor: pointer;
+     }
+     .program-card i{
+      font-size: 2rem;
+      color: var(--secondary);
+      padding-bottom: 0.5rem;
+     }
+     .program-card h3{
+      color: var(--secondary);
+      padding-bottom: 0.8rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+     }
+     .program-card p{
+      color: var(--secondary);
+     }
+     .section ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+     }
+     .section li{
+      margin: 1rem;
+      font-size: 1.5rem;
+      background: var(--secondary);
+      margin: 1.5rem 0;
+      padding: 1.5rem 2rem;
+      border-left: 5px solid var(--white);
+      border-right: 5px solid var(--white);
+      border-radius: 1rem;
+      font-weight: bold;
+      color: var(--primary);
+     }
+     .cta {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 1rem 2rem;
+      text-align: center;
+      border-radius: 1rem;
+      margin-top: 1rem;
+      }
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+}
      /* mobile */
      @media (max-width: 768px){
       .banner{
@@ -211,6 +293,9 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
       .empower{
          font-size: 1rem;
       }
+      .btn{
+         width: 100%;
+      }
      .grid{
       display: grid;
       grid-template-columns: 1fr;
@@ -224,6 +309,12 @@ Our primary focus lies in illuminating the path forward, while nourishing our en
       font-size: 1rem;
       text-align: start;
       line-height: 1.6rem;
+     }
+     .stats{
+      grid-template-columns: repeat(2, 1fr);
+     }
+     .programs{
+      grid-template-columns: repeat(1, 1fr);
      }
      }
 
