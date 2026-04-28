@@ -1,5 +1,15 @@
 <script setup>
-import Footer from '@/components/Footer.vue';
+import Footer from '@/components/Footer.vue'
+const programs = [
+   {id: 1, name: "Nursery Education",
+   desc: "Strong foundation in literacy,    numeracy, and critical thinking for ages 4-11, while nurturing creativity in a supportive environment."},
+   {id: 2, name: "Primary Education",
+      desc: "Building on foundational knowledge with a focus on academic growth, creativity, and problem-solving skills."
+   },
+   {id: 3, name: "Secondary Education",
+      desc: "Advanced academic training that develops critical thinking and prepares students for higher education and future careers."
+   },
+]
 </script>
 
 <template>
@@ -46,22 +56,11 @@ import Footer from '@/components/Footer.vue';
             <!-- programs -->
              <div class="section">
                <h2>Programs</h2>
-               <div class="programs">
+               <div class="programs" v-for="program in programs" :key="program.id">
                   <div class="program-card">
                      <i class="fa fa-book" aria-hidden="true"></i>
-                     <h3>Nursery Education</h3>
-                     <p>Strong foundation in literacy, numeracy, and critical thinking for ages 4-11, while nurturing creativity in a supportive environment.
-                     </p>
-                  </div>
-                  <div class="program-card">
-                     <i class="fa fa-book" aria-hidden="true"></i>
-                     <h3>Primary Education</h3>
-                     <p>Building on foundational knowledge with a focus on academic growth, creativity, and problem-solving skills.</p>
-                  </div>
-                  <div class="program-card">
-                     <i class="fa fa-book" aria-hidden="true"></i>
-                     <h3>Secondary Education</h3>
-                     <p>Advanced academic training that develops critical thinking and prepares students for higher education and future careers.</p>
+                     <h3>{{ program.name }}</h3>
+                     <p>{{ program.desc }}</p>
                   </div>
                </div>
                <RouterLink to="/program">
@@ -108,7 +107,7 @@ import Footer from '@/components/Footer.vue';
    }
     .banner{
         padding: 2rem;
-        height:70vh;
+        min-height:70vh;
         position: relative;
     }
      .welcome{

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer.vue';
       <div class="container">
         <header>
         <h1>ABOUT US</h1>
-        <P>For over a decades, we have been shaping the leaders of tomorrow through excellence in education, character building and innovation.</P>
+        <P>For over a decade, we have been shaping the leaders of tomorrow through excellence in education, character building and innovation.</P>
         </header>
         <div class="values">
           <h2>Core Values</h2>
@@ -22,12 +22,12 @@ import Footer from '@/components/Footer.vue';
           <div class="card">
             <img src="../assets/bridge.png" alt="">
             <h2>Our Vision</h2>
-            <p>Our vision is to be forefront in the prvate education sector and to nurture the children to become all they can be, through quality all-round education, from nursery to secondary level.</p>
+            <p>Our vision is to be forefront in the private education sector and to nurture the children to become all they can be, through quality all-round education, from nursery to secondary level.</p>
           </div>
           <div class="card">
             <img src="../assets/brige.png" alt="">
             <h2>Our Mission</h2>
-            <p>We are dedicated o the general advancement of humanity, through quality education, dedicated service and total commitment. With our light and love the best is our lot.</p>
+            <p>We are dedicated to the general advancement of humanity, through quality education, dedicated service and total commitment. With our light and love the best is our lot.</p>
           </div>
           <div class="card">
             <img src="../assets/bridge.png" alt="">
@@ -43,7 +43,7 @@ import Footer from '@/components/Footer.vue';
           </div>
           <div class="policy child-policy">
             <h1 class="grid1">Child Protection Policy</h1>
-            <p class="grid2">The Child Protection Policy is a omprehensive framework designed to ensure the safety, well-being and protection of children within all school premises, including nursery, primary and secondary schools. This policy outlines the guidelines, procedures and responsibilities that the institution, staff, parents and students must adhere to in order to create a secure and nuturing environment for all children.</p>
+            <p class="grid2">The Child Protection Policy is a omprehensive framework designed to ensure the safety, well-being and protection of children within all school premises, including nursery, primary and secondary schools. This policy outlines the guidelines, procedures and responsibilities that the institution, staff, parents and students must adhere to in order to create a secure and nurturing environment for all children.</p>
           </div>
         </div>
       </div>

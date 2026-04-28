@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const isOpen = ref(false);
+const closeMenu = ref(false);
 </script>
 
 <template>
@@ -14,7 +15,7 @@ const isOpen = ref(false);
                     Ascend School
                 </RouterLink>
             </div>
-            <div class="menu-icon" @click="isOpen = !isOpen"><i class="fa fa-bars" aria-hidden="true"></i>
+            <div class="menu-icon" @click="isOpen = !isOpen" closeMenu="true"><i class="fa fa-bars" aria-hidden="true"></i>
            </div>
             <div class="links" :class="{ active: isOpen }">
             <RouterLink to="/">Home</RouterLink>
