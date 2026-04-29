@@ -1,5 +1,35 @@
 <script setup>
 import Footer from '@/components/Footer.vue';
+import img1 from '@/assets/bridge.png'
+import Img2 from '@/assets/brige.png'
+
+const visions = [
+  {id: 1, 
+   name: "Our Vision", 
+   para: "Our vision is to be forefront in the private education sector and to nurture the children to become all they can be, through quality all-round education, from nursery to secondary level.",
+   image: img1,
+  },
+  {id: 2, 
+  name: "Our Mission", 
+  para: "We are dedicated to the general advancement of humanity, through quality education, dedicated service and total commitment. With our light and love the best is our lot.",
+  image: Img2,
+  },
+  {id: 3, 
+   name: "Our Promise", 
+   para: "Every child receives personalized attention, world-class resources, and opportunities to discover their unique greatness",
+   image: img1,
+  },
+  ]
+  const policies = [
+  {title: "policy1",
+   name: "School Policy", 
+   para: "The School Policy serves as a guiding document that outlines the rules, regulations and expectations for students, staff and parents within all school premises, including nursery, primary and secondary schools. This comprehensive Policy provides clarity and consistency in matters pertaining to academic performance, behaviour, attendance, health and safety, discipline and school culture. The Policy is designed to create a positive and conducive learning environment that fosters the holistic development of students.",
+  },
+  {title: "policy2",
+   name: "Child Protection Policy", 
+   para: "The Child Protection Policy is a omprehensive framework designed to ensure the safety, well-being and protection of children within all school premises, including nursery, primary and secondary schools. This policy outlines the guidelines, procedures and responsibilities that the institution, staff, parents and students must adhere to in order to create a secure and nurturing environment for all children.",
+  },
+]
 </script>
 <template>
     <section id="about">
@@ -19,31 +49,17 @@ import Footer from '@/components/Footer.vue';
           </ul>
         </div>
         <div class="vision">
-          <div class="card">
-            <img src="../assets/bridge.png" alt="">
-            <h2>Our Vision</h2>
-            <p>Our vision is to be forefront in the private education sector and to nurture the children to become all they can be, through quality all-round education, from nursery to secondary level.</p>
-          </div>
-          <div class="card">
-            <img src="../assets/brige.png" alt="">
-            <h2>Our Mission</h2>
-            <p>We are dedicated to the general advancement of humanity, through quality education, dedicated service and total commitment. With our light and love the best is our lot.</p>
-          </div>
-          <div class="card">
-            <img src="../assets/bridge.png" alt="">
-            <h2>Our Promise</h2>
-            <p>Every child receives personalized attention, world-class resources, and opportunities to discover their unique greatness.</p>
+          <div class="card" v-for="vision in visions" :key="vision.id">
+            <img :src="vision.image" />
+            <h2>{{ vision.name }}</h2>
+            <p>{{ vision.para }}</p>
           </div>
         </div>
         <div class="codes">
           <h2>CODES & POLICIES</h2>
-          <div class="policy school-policy">
-            <h1 class="grid1">School Policy</h1>
-            <p class="grid2">The School Policy serves as a guiding document that outlines the rules, regulations and expectations for students, staff and parents within all school premises, including nursery, primary and secondary schools. This comprehensive Policy provides clarity and consistency in matters pertaining to academic performance, behaviour, attendance, health and safety, discipline and school culture. The Policy is designed to create a positive and conducive learning environment that fosters the holistic development of students.</p>
-          </div>
-          <div class="policy child-policy">
-            <h1 class="grid1">Child Protection Policy</h1>
-            <p class="grid2">The Child Protection Policy is a omprehensive framework designed to ensure the safety, well-being and protection of children within all school premises, including nursery, primary and secondary schools. This policy outlines the guidelines, procedures and responsibilities that the institution, staff, parents and students must adhere to in order to create a secure and nurturing environment for all children.</p>
+          <div class="policy" v-for="policy in policies" :key="policy.title">
+            <h1 class="grid1">{{ policy.name }}</h1>
+            <p class="grid2">{{ policy.para }}</p>
           </div>
         </div>
       </div>
@@ -55,9 +71,18 @@ import Footer from '@/components/Footer.vue';
 
 <style scoped>
 #about{
+  animation: slideInLeft 1s ease-out;
   font-family: "Open Sans", sans-serif;
   margin-top: 3rem;
 }
+   @keyframes slideInLeft{
+      0%{
+         transform: translateX(-100px);
+      }
+      100%{
+         transform: translateX(0);
+      }
+    }
 header{
   text-align: center;
 }
@@ -124,7 +149,7 @@ header p{
   color: var(--secondary);
   margin-top: 2rem;
 }
-.school-policy{
+.policy{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
@@ -133,34 +158,17 @@ header p{
   margin-top: 1rem;
   align-items: center;
 }
-.school-policy .grid1{
+.policy .grid1{
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
   color: var(--primary);
 }
-.school-policy .grid2{
+.policy .grid2{
   color: var(--white);
   font-size: 1.1rem;
 }
-.child-policy{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  padding: 2rem;
-  margin-top: 1rem;
-  align-items: center;
-}
-.child-policy .grid1{
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--secondary);
-}
-.child-policy .grid2{
-  color: var(--white);
-  font-size: 1.1rem;
-}
+
 @media (max-width: 768px){
   .values{
     grid-template-columns: repeat(1, 1fr);
@@ -173,10 +181,7 @@ header p{
   .vision{
     grid-template-columns: repeat(1, 1fr);
   }
-  .school-policy{
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .child-policy{
+  .policy{
     grid-template-columns: repeat(1, 1fr);
   }
 }

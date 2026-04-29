@@ -3,7 +3,9 @@ import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const isOpen = ref(false);
-const closeMenu = ref(false);
+function closeMenu() {
+    isOpen.value = false
+}
 </script>
 
 <template>
@@ -15,28 +17,21 @@ const closeMenu = ref(false);
                     Ascend School
                 </RouterLink>
             </div>
-            <div class="menu-icon" @click="isOpen = !isOpen" closeMenu="true"><i class="fa fa-bars" aria-hidden="true"></i>
+            <div class="menu-icon" @click="isOpen = !isOpen"><i class="fa fa-bars" aria-hidden="true"></i>
            </div>
-            <div class="links" :class="{ active: isOpen }">
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/about">About Us</RouterLink>
-            <RouterLink to="/program">Program</RouterLink>
-            <RouterLink to="/admission">Admission</RouterLink>
-            <RouterLink to="/testimonial">Testimonial</RouterLink>
-            <RouterLink to="/contact">Contact Us</RouterLink>
+            <div class="links" :class="{ active: isOpen}">
+            <RouterLink to="/" @click="closeMenu">Home</RouterLink>
+            <RouterLink to="/about" @click="closeMenu">About Us</RouterLink>
+            <RouterLink to="/program" @click="closeMenu">Program</RouterLink>
+            <RouterLink to="/admission" @click="closeMenu">Admission</RouterLink>
+            <RouterLink to="/testimonial" @click="closeMenu">Testimonial</RouterLink>
+            <RouterLink to="/contact" @click="closeMenu">Contact Us</RouterLink>
             </div>
         </div>
     </nav>
 </template>
 
 <style>
-    :root{
-        --primary: #6d28d9;
-        --secondary: #a78bfa;
-        --light-bg: #fafaf9;
-        --dark-text: #111827;
-        --white: #ffffff;
-    }
     .menu-icon{
         display: none;
     }

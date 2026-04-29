@@ -57,11 +57,11 @@ const programs = [
              <div class="section">
                <h2>Programs</h2>
                <div class="programs" v-for="program in programs" :key="program.id">
-                  <div class="program-card">
+                  <!-- <div class="program-card"> -->
                      <i class="fa fa-book" aria-hidden="true"></i>
                      <h3>{{ program.name }}</h3>
                      <p>{{ program.desc }}</p>
-                  </div>
+                  <!-- </div> -->
                </div>
                <RouterLink to="/program">
                   <button class="btn">View All Programs</button>
@@ -216,8 +216,6 @@ const programs = [
      .programs{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-     }
-     .program-card{
       background: var(--white);
       margin: 1rem;      
       padding: 1rem 3rem;
@@ -226,22 +224,22 @@ const programs = [
       border: 1px solid var(--secondary);
       transition: 1s ease-in;
      }
-     .program-card:hover{
+     .programs:hover{
       background: var(--primary);
       cursor: pointer;
      }
-     .program-card i{
+     .programs i{
       font-size: 2rem;
       color: var(--secondary);
       padding-bottom: 0.5rem;
      }
-     .program-card h3{
+     .programs h3{
       color: var(--secondary);
       padding-bottom: 0.8rem;
       font-weight: bold;
       font-size: 1.5rem;
      }
-     .program-card p{
+     .programs p{
       color: var(--secondary);
      }
      .section ul{
