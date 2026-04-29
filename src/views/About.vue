@@ -94,6 +94,8 @@ header h1{
 header p{
   color: var(--white);
   font-size: 1rem;
+  max-width: 700px;
+  margin: auto;
 }
 .values{
   background: var(--white);

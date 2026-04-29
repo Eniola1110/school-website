@@ -78,6 +78,7 @@ const programs = [
  #programs{
       animation: slideInLeft 1s ease-out;
       font-family: "Open Sans", sans-serif;
+      padding: 2rem;
    }
    @keyframes slideInLeft{
       0%{
@@ -95,7 +96,8 @@ const programs = [
 }
 #programs .title{
     color: var(--white);
-    text-align: center;
+    margin: auto;
+    max-width: 700px;
     margin-top: 1rem;
     font-size: 1.1rem;
 }
@@ -104,9 +106,8 @@ const programs = [
     grid-template-columns: repeat(3, 1fr);
     background: var(--secondary);
     margin-top:1rem ;
-    justify-content: center;
-    align-items: center;
     padding-top: 2rem;
+    border-radius: 1rem;
 }
 .program{
     margin: 1rem;

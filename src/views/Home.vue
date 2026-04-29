@@ -10,6 +10,24 @@ const programs = [
       desc: "Advanced academic training that develops critical thinking and prepares students for higher education and future careers."
    },
 ]
+const stats = [
+   {id: 1, 
+      h3: "20+",
+      p: "Years of Excellence"
+   },
+      {id: 2, 
+      h3: "1500+",
+      p: "Students Enrolled"
+   },
+      {id: 3, 
+      h3: "100+",
+      p: "Qualified Staff"
+   },
+      {id: 4, 
+      h3: "95%",
+      p: "Success Rate"
+   }
+]
 </script>
 
 <template>
@@ -35,33 +53,21 @@ const programs = [
                 </div>
             </div>
             <!-- stats -->
-            <div class="stats">
-               <div>
-                  <h3>20+</h3>
-                  <p>Years of Excellence</p>
+             <div class="stats">
+               <div class="stat" v-for="stat in stats" :key="stat.id">  
+                  <h3>{{ stat.h3 }}</h3>
+                  <p>{{ stat.p }}</p>
                </div>
-               <div>
-                  <h3>1500+</h3>
-                  <p>Students Enrolled</p>
-               </div>
-               <div>
-                  <h3>100+</h3>
-                  <p>Qualified Staff</p>
-               </div>
-               <div>
-                  <h3>95%</h3>
-                  <p>Success Rate</p>
-               </div>
-            </div>
+             </div>
             <!-- programs -->
              <div class="section">
                <h2>Programs</h2>
-               <div class="programs" v-for="program in programs" :key="program.id">
-                  <!-- <div class="program-card"> -->
+               <div class="programs">
+               <div class="program" v-for="program in programs" :key="program.id">
                      <i class="fa fa-book" aria-hidden="true"></i>
                      <h3>{{ program.name }}</h3>
                      <p>{{ program.desc }}</p>
-                  <!-- </div> -->
+               </div>
                </div>
                <RouterLink to="/program">
                   <button class="btn">View All Programs</button>
@@ -199,32 +205,36 @@ const programs = [
       text-align: center;
      }
      .stats{
-      display: grid;
       background: var(--secondary);
-      grid-template-columns: repeat(4, 1fr) ;
       text-align: center;
       padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
      }
-     .stats h3{
+     .stat h3{
       font-size: 3rem;
       color: var(--primary);
      }
-     .stats p{
+     .stat p{
       font-size: 1rem;
       color: var(--white);
      }
      .programs{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+     }
+     .program{
+      margin-top: 1rem;
+      gap: 5rem;
       background: var(--white);
       margin: 1rem;      
       padding: 1rem 3rem;
       text-align: start;
       border-radius: 1rem;
       border: 1px solid var(--secondary);
-      transition: 1s ease-in;
+      transition: 1s ease-in; 
      }
-     .programs:hover{
+     .program:hover{
       background: var(--primary);
       cursor: pointer;
      }
