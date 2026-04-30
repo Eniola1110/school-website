@@ -48,6 +48,7 @@ footer{
     padding: 2rem 3rem;
     border-top: 1px solid var(--secondary);
     color: var(--white);
+    background: var(--gradient-warm);
 }
 .grid{
     display: grid;
@@ -60,7 +61,7 @@ footer{
 .grid1 h3{
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--secondary);
+    color: var(--text-dark);
     margin-top: 0.5rem;
 }
 .grid1 p{
@@ -73,7 +74,7 @@ footer{
 }
 .grid2 h2{
     margin-bottom: 1rem;
-    color: var(--secondary);
+    color: var(--text-dark);
 }
 .grid2 .footer-links {
   display: flex;
@@ -90,7 +91,7 @@ footer{
 }
 .grid3 h2 {
   margin-bottom: 1rem;
-  color: var(--secondary);
+  color: var(--text-dark);
 }
 
 .grid3 p {
@@ -100,12 +101,13 @@ footer{
 
 .grid3 i {
   margin-right: 8px;
-  color: var(--secondary);
+  color: var(--text-dark);
 }
 footer > p {
   text-align: center;
   font-size: 0.9rem;
   margin-top: 10px;
+  color: var(--text-dark);
 }
 
 /* mobile */

@@ -59,7 +59,7 @@ function submitForm(){
 <style scoped>
 .admission {
     padding: 2rem;
-    font-family: "Open Sans", sans-serif;
+    /* font-family: "Open Sans", sans-serif; */
     animation: slideInLeft 1s ease-out;
    }
    @keyframes slideInLeft{

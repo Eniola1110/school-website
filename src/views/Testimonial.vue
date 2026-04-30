@@ -11,6 +11,8 @@ import Footer from '@/components/Footer.vue';
     </section>
 </template>
 
-<style lang="scss" scoped>
-
+<style scoped>
+html{
+    scroll-behavior: smooth;
+}
 </style>

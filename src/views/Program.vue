@@ -77,7 +77,7 @@ const programs = [
 <style scoped>
  #programs{
       animation: slideInLeft 1s ease-out;
-      font-family: "Open Sans", sans-serif;
+      /* font-family: "Open Sans", sans-serif; */
       padding: 2rem;
    }
    @keyframes slideInLeft{
@@ -90,7 +90,7 @@ const programs = [
     }
 #programs h1{
     color: var(--secondary);
-    padding-top: 2rem;
+    padding-top: 1rem;
     text-align: center;
     font-size: 2.5rem;
 }
@@ -210,6 +210,9 @@ const programs = [
 @media (max-width: 768px){
     .programs{
         grid-template-columns: repeat(1, 1fr);
+    }
+    #programs h1{
+      font-size: 2rem;
     }
 }
 @media (min-width:769px) and (max-width: 1240px){

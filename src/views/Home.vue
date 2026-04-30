@@ -1,14 +1,29 @@
 <script setup>
 import Footer from '@/components/Footer.vue'
+import img1 from '@/assets/bridge.png'
+import img2 from '@/assets/brige.png'
 const programs = [
-   {id: 1, name: "Nursery Education",
-   desc: "Strong foundation in literacy,    numeracy, and critical thinking for ages 4-11, while nurturing creativity in a supportive environment."},
-   {id: 2, name: "Primary Education",
-      desc: "Building on foundational knowledge with a focus on academic growth, creativity, and problem-solving skills."
-   },
-   {id: 3, name: "Secondary Education",
-      desc: "Advanced academic training that develops critical thinking and prepares students for higher education and future careers."
-   },
+  {
+    id: 1,
+    name: "Nursery Education",
+    icon: "fa fa-book",
+    img: img1,
+    desc: "A fun and safe start to learning through play, creativity, and early literacy skills."
+  },
+  {
+    id: 2,
+    name: "Primary Education",
+    icon: "fa fa-book",
+    img: img2,
+    desc: "Building strong academic foundations with interactive and engaging lessons."
+  },
+  {
+    id: 3,
+    name: "Secondary Education",
+    icon: "fa fa-book",
+    img: img1,
+    desc: "Preparing students for higher education and future success with advanced learning."
+  }
 ]
 const stats = [
    {id: 1, 
@@ -28,68 +43,133 @@ const stats = [
       p: "Success Rate"
    }
 ]
+const cards = [
+   {id: 1, 
+    icon: "fa fa-chalkboard-teacher",
+    h3: "Qualified Teachers",
+    p: "Experienced and caring educators guiding every child."
+   },
+   {id: 2, 
+    icon: "fa fa-school",
+    h3: "Modern Facilities",
+    p: "Well-equipped classrooms for effective learning."
+   },
+   {id: 3, 
+    icon: "fa fa-shield-alt",
+    h3: "Safe Environment",
+    p: "A secure and friendly place for children to grow."
+   },
+   {id: 4, 
+    icon: "fa fa-star",
+    h3: "Strong Values",
+    p: "We build character and discipline alongside academics."
+   },
+   {id: 5, 
+    icon: "fa fa-laptop",
+    h3: "Tech Learning",
+    p: "Preparing students for the digital future."
+   },
+   {id: 6, 
+    icon: "fa fa-school",
+    h3: "Modern Facilities",
+    p: "Well-equipped classrooms for effective learning."
+   }
+]
 </script>
 
 <template>
         <section id="home">
             <div class="banner">
-                <p class="welcome"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Welcome to Excellence</p>
-                <h1>Ascend <span>School</span></h1>
-                <p class="great">"Inspiring Greatness"</p>
-                <p class="empower">Empowering young minds through world-class education,<br> innovation, and character development since 2005. </p>
-                <RouterLink to="/Contact"><button class="btn"><i class="fa fa-phone" aria-hidden="true"></i>
-                Call Us Now</button></RouterLink>
+                <div class="banner-text">
+                   <p class="welcome"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Welcome to Ascend</p>
+
+                   <h1>Learning Made <span>Fun</span></h1>
+                   <p class="great">Where Every Child Shines</p>
+                   <p class="empower">
+                     We help children grow, explore and succed in a fun and safe environment.
+                   </p>
+
+                   <RouterLink to="/Contact"><button class="btn"><i class="fa fa-phone" aria-hidden="true"></i>
+                  Contact Us</button></RouterLink>
+                </div>
+
+                <div class="banner-image">
+                  <img src="../assets/banner-image.jpg" alt="">
+                </div>
             </div>
             <div class="bridge">
                 <div class="grid">
-                  <div class="grid1">
-                     <p>Quality And Excellence</p>
+                  <div class="grid-image">
+                     <img src="../assets/learning.png" alt="">
                   </div>
-                  <div class="grid2">
-                     <p>We are passionately devoted to the progress of humanity, achieved through high-quality education, dedicated service, and unwavering commitment. <br>
-                     Our primary focus lies in illuminating the path forward, while nourishing our endeavors with love. In this era of heightened awareness, we firmly believe that a comprehensive education holds the key to overcoming life's myriad challenges. With the radiance of our knowledge and the warmth of our compassion, we aspire to attain nothing less than the very best.
-                      </p>
+                  <div class="grid-text">
+                     <h2>Learning with joy</h2>
+                     <p>At Ascend School, we create a fun and engaging environment where children grow academically, socially and creativity. </p>
+
+                     <div class="features">
+                        <p><i class="fa fa-book"></i>Interactive Learning</p>
+                        <p><i class="fa fa-paint-brush"></i>Creative Activities</p>
+                        <p><i class="fa fa-chalkboard-teacher"></i>Caring Teachers</p>
+                     </div>
                   </div>
                 </div>
             </div>
             <!-- stats -->
              <div class="stats">
                <div class="stat" v-for="stat in stats" :key="stat.id">  
+                  <i class="fa fa-users"></i>
                   <h3>{{ stat.h3 }}</h3>
                   <p>{{ stat.p }}</p>
                </div>
              </div>
-            <!-- programs -->
+            <!--  programs -->
              <div class="section">
-               <h2>Programs</h2>
-               <div class="programs">
-               <div class="program" v-for="program in programs" :key="program.id">
-                     <i class="fa fa-book" aria-hidden="true"></i>
-                     <h3>{{ program.name }}</h3>
-                     <p>{{ program.desc }}</p>
-               </div>
-               </div>
-               <RouterLink to="/program">
-                  <button class="btn">View All Programs</button>
-               </RouterLink>
-             </div>
-             <!-- why choose us -->
-              <div class="section">
-               <h2>Why Choose Us</h2>
-               <ul>
-                  <li>Qualified Teachers</li>
-                  <li>Modern Learning Facilities</li>
-                  <li>Safe Environments</li>
-                  <li>Strong moral Values</li>
-                  <li>Technology-Based Learning</li>
-               </ul>
+             <h2>Our Programs</h2>
+
+             <div class="programs-grid">
+             <div class="program-card" v-for="program in programs" :key="program.id">
+ 
+              <div class="img-box">
+                <img :src="program.img" alt="">
               </div>
+
+               <div class="program-content">
+               <i :class="program.icon"></i>
+               <h3>{{ program.name }}</h3>
+               <p>{{ program.desc }}</p>
+               </div>
+
+              </div>
+              </div>
+             <div class="program-btn">
+             <RouterLink to="/program">
+             <button class="btn">View All Programs</button>
+             </RouterLink>
+             </div>
+            </div>
+
+             <!-- why choose us -->
+            <div class="section-choose">
+              <h2>Why Choose Us</h2>
+
+             <div class="why-grid">
+              <div class="why-card" v-for="card in cards" :key="card.id">
+               <i :class="card.icon"></i>
+               <h3>{{ card.h3 }}</h3>
+               <p>{{ card.p }}</p>
+              </div>
+             </div>
+           </div>
               <!-- CTA -->
                <div class="cta">
-                  <h2>Enroll Your Child Today</h2>
-                  <RouterLink to="/admission">
-                     <button class="btn primary">Apply Now</button>
-                  </RouterLink>
+                  <div class="cta-content">
+                     <h2>Enroll Your Child Today</h2>
+                     <p>Give your child the best start in life with quality education, caring teachers, and a fun learning environment.</p>
+
+                     <router-link to="/admission">
+                        <button class="btn cta-btn">Apply Now</button>
+                     </router-link>
+                  </div>
                </div>
             <section>
                <Footer/>
@@ -99,9 +179,11 @@ const stats = [
 </template>
 
 <style scoped>
+html{
+   scroll-behavior: smooth;
+}
    #home{
       animation: slideInLeft 1s ease-out;
-      font-family: "Open Sans", sans-serif;
    }
    @keyframes slideInLeft{
       0%{
@@ -113,35 +195,49 @@ const stats = [
    }
     .banner{
         padding: 2rem;
-        min-height:70vh;
-        position: relative;
+        min-height:80vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: space-between;
+        background: var(--gradient-main);
+        color: var(--white);
+    }
+    .banner-image img{
+      width: 500px;
+      border-radius: 2rem;
+      margin-left: 2rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .banner-image img:hover{
+      transform: scale(1.05);
     }
      .welcome{
-        background-color: rgb(134, 134, 206);
-        width: 20%;
-        text-align: center;
-        padding: 0.3rem 0.2rem;
-        border: 0.1rem solid rgb(151, 151, 247);
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+        background: var(--accent);
+        color: var(--text-dark);
+        width: fit-content;
         border-radius: 2rem;
         font-weight: bold;
-        font-size: 0.8rem;
-        color: var(--white);
      }
      .welcome i{
-        padding-right: 1rem;
+        padding-right: 0.9rem;
      }
 
      .banner h1{
         padding-top: 2rem;
-        font-size: 5rem;
-        color: var(--secondary);
+        font-size: 4rem;
+        color: var(--accent);
      }
      .banner span{
-        color: var(--white);
+        color: var(--text-dark);
      }
      .great{
         font-size: 1.8rem ;
-        color: rgb(228, 218, 218);
+        color: var(--text-dark);
         font-weight: bold;
      }
      .empower{
@@ -150,66 +246,88 @@ const stats = [
         padding-top: 1rem;
      }
      .btn{
-        padding: 1rem 3rem;
-        margin-top: 2rem;
-        border: 1px solid  rgb(151, 151, 247);
-        color: var(--secondary);
-        font-size: 1.2rem;
-        border-radius: 1rem;
-        font-weight: bold;
-        transition: 1s ease-in-out;
+         padding: 0.8rem 2rem;
+         margin-top: 1.5rem;
+         border: none;
+         background: var(--accent);
+         color: var(--text-dark);
+         font-size: 1rem;
+         border-radius: 2rem;
+         font-weight: bold;
+         transition: 0.3s ease;
+         cursor: pointer;
+         text-align: center;
      }
      .btn:hover{
-      background: transparent;
+      background: var(--text-dark);
       color: var(--white);
-      cursor: pointer;
+      transform: scale(1.05);
      }
      .bridge{
-        text-align: center;
-        /* background: linear-gradient(to right,  rgba(141, 29, 185, 0.1)50%,rgba(39, 6, 224, 0)60%),
-        url(../assets/bridge.png); */
-        /* background-size: cover; */
-        /* background-repeat: no-repeat; */
-        background: var(--white);
-        min-height: 60vh;
-        align-items: center;
-        justify-content: center;
+        background: var(--pink);
+        padding: 5rem 4rem;
      }
      .grid{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 3rem;
-      padding: 5rem 4rem;
       align-items: center;
      }
-     .grid1{
-      font-size: 4rem;
-      font-weight: bold;
-      text-align: center;
-      color: var(--secondary);
+     .grid-image img{
+      width: 100%;
+      border-radius: 1.5rem;
+      cursor: pointer;
      }
-     .grid2{
-      font-size: 1.2rem;
-      text-align: start;
-      color: var(--primary);
-      line-height: 2rem;
-     }
-     .section{
-      padding: 2rem 1rem;
-      text-align: center;
-     }
-     .section h2{
-      font-size: 2rem;
+     .grid-image img:hover{
+     transform: scale(1.03);
+     transition: 0.3s ease;
+   }
+    .grid-text{
+      background: var(--p);
+    }
+     .grid-text h2{
+      font-size: 2.5rem;
+      color: var(--white);
       margin-bottom: 1rem;
-      color: var(--secondary);
-      text-align: center;
+     }
+     .grid-text p{
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+     }
+     .features p{
+      background: var(--green);
+      padding: 0.7rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 10px;
+      font-size: 1.3rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+     }
+     .features i{
+       font-size: 2.5rem;
+       padding-right: 2rem;
+       color: var(--text-dark);
      }
      .stats{
-      background: var(--secondary);
+      background: var(--gradient-main);
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+     }
+     .stat{
+      background: var(--white);
+      margin: 1rem;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+     }
+     .stat:hover{
+      transform: translateY(-5px);
+     }
+     .stat i{
+      font-size: 2rem;
+      color: var(--pink);
      }
      .stat h3{
       font-size: 3rem;
@@ -219,73 +337,138 @@ const stats = [
       font-size: 1rem;
       color: var(--white);
      }
-     .programs{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+     .section{
+      background: var(--pink);
+      padding: 2rem;
+      /* text-align: center; */
      }
-     .program{
-      margin-top: 1rem;
-      gap: 5rem;
-      background: var(--white);
-      margin: 1rem;      
-      padding: 1rem 3rem;
-      text-align: start;
-      border-radius: 1rem;
-      border: 1px solid var(--secondary);
-      transition: 1s ease-in; 
+     .program-btn{
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
      }
-     .program:hover{
-      background: var(--primary);
-      cursor: pointer;
-     }
-     .programs i{
-      font-size: 2rem;
-      color: var(--secondary);
-      padding-bottom: 0.5rem;
-     }
-     .programs h3{
-      color: var(--secondary);
-      padding-bottom: 0.8rem;
-      font-weight: bold;
-      font-size: 1.5rem;
-     }
-     .programs p{
-      color: var(--secondary);
-     }
-     .section ul{
-      padding: 0;
-      margin: 0;
-      list-style: none;
-     }
-     .section li{
-      margin: 1rem;
-      font-size: 1.5rem;
-      background: var(--secondary);
-      margin: 1.5rem 0;
-      padding: 1.5rem 2rem;
-      border-left: 5px solid var(--white);
-      border-right: 5px solid var(--white);
-      border-radius: 1rem;
-      font-weight: bold;
-      color: var(--primary);
-     }
-     .cta {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--white);
-      padding: 1rem 2rem;
+     .section h2{
       text-align: center;
-      border-radius: 1rem;
-      margin-top: 1rem;
-      }
-    .cta h2 {
+      color: var(--text-light);
+      font-size: 2.5rem;
+     }
+     .programs-grid{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 2rem;
+     margin-top: 2rem;
+     }
+
+/* CARD STYLE */
+    .program-card{
+    background: var(--primary);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+    }
+
+   .program-card:hover{
+    transform: translateY(-8px);
+   }
+
+/* IMAGE */
+   .img-box img{
+   width: 100%;
+   height: 180px;
+   object-fit: cover;
+  }
+
+/* CONTENT */
+  .program-content{
+   padding: 1rem;
+   text-align: left;
+   }
+
+  .program-content i{
+   font-size: 3rem;
+   color: var(--text-dark);
+   }
+
+   .program-content h3{
+    color: var(--text-dark);
+    margin: 0.5rem 0;
+    font-size: 2rem;
+    }
+
+   .program-content p{
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    }
+     .section-choose{
+      background: var(--gradient-warm);
+      padding: 2rem;
+     }
+     .section-choose h2{
       font-size: 2rem;
-      margin-bottom: 20px;
-      font-weight: bold;
-}
+      color: var(--text-dark);
+      text-align: center;
+     }
+     .why-grid{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 2rem;
+     margin-top: 2rem;
+     }
+    .why-card{
+     background: var(--green);
+     padding: 2rem 1.5rem;
+     border-radius: 20px;
+     text-align: center;
+     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+     transition: 0.3s ease;
+     }
+
+    .why-card:hover{
+    transform: translateY(-8px);
+    }
+
+    .why-card i{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    }
+
+    .why-card h3{
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    }
+
+    .why-card p{
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    }
+    .cta{
+      background: var(--gradient-main);
+      color: var(--white);
+      padding: 4rem 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      border-radius: 2rem;
+      overflow: hidden;
+    }
+     .cta h2{
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+     }
+     .cta p{
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--text-dark);
+     }
      /* mobile */
      @media (max-width: 768px){
       .banner{
-         height: 60vh;
+         grid-template-columns: repeat(1,1fr);
+         min-height: 80vh;
          padding: 2rem 1rem;
       }
       .welcome{
@@ -296,14 +479,14 @@ const stats = [
       .banner h1{
          font-size: 2.5rem;
       }
+      .banner-image img{
+         width: 400px;
+      }
       .great{
          font-size: 1.2rem;
       }
       .empower{
          font-size: 1rem;
-      }
-      .btn{
-         width: 100%;
       }
      .grid{
       display: grid;
@@ -322,7 +505,10 @@ const stats = [
      .stats{
       grid-template-columns: repeat(2, 1fr);
      }
-     .programs{
+     .why-grid{
+     grid-template-columns: 1fr;
+     }
+     .programs-grid{
       grid-template-columns: repeat(1, 1fr);
      }
      }

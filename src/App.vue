@@ -19,14 +19,28 @@ html{
   margin: 0;
 }
 :root{
-        --primary: #6d28d9;
+        /* --primary: #6d28d9;
         --secondary: #a78bfa;
         --light-bg: #fafaf9;
         --dark-text: #111827;
+        --white: #ffffff; */
+
+        --primary: #38bdf8;
+        --secondary: #a78bfa;
+        --accent: #facc15;
+        --green: #4ade80;
+        --pink: #fb7185;
+        --orange: #fb923c;
+        --bg-light: #f9fafb;
         --white: #ffffff;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --gradient-main: linear-gradient(135deg, #38bdf8, #a78bfa);
+        --gradient-warm: linear-gradient(135deg, #facc15, #fb923c);
       }
 body{
   background: var(--primary);
   min-height: 200vh;
+   font-family: "Poppins", sans-serif;
 }
 </style>

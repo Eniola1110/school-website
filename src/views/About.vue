@@ -72,7 +72,7 @@ const visions = [
 <style scoped>
 #about{
   animation: slideInLeft 1s ease-out;
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
   margin-top: 3rem;
 }
    @keyframes slideInLeft{
@@ -104,6 +104,7 @@ header p{
   align-items: center;
   margin-top: 2rem;
   min-height: 40vh;
+  border-radius: 1rem;
 }
 .values h2{
   font-weight: bold;
