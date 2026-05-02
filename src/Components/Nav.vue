@@ -9,22 +9,30 @@ function closeMenu() {
 </script>
 
 <template>
-    <nav>
-        <div class="navbar">
-            <div class="logo">
-                <img src="../assets/ascendlogo.png" alt="">
-                <RouterLink to="/">
-                    Ascend School
-                </RouterLink>
+    <nav class="navbar">
+        <div class="nav-menu">
+
+            <!-- nav-text -->
+            <RouterLink to="/" class="logo">
+              <div class="logo-img"><img src="../assets/ascendlogo.png" alt=""></div>  
+              <div class="logo-text">
+                <span class="logo-main">Kell's School</span>
+                <span class="logo-subtitle">Preschool & Nursery</span>
+              </div>
+            </RouterLink>
+
+            <!-- mobile Toggle -->
+
+           <div class="menu-icon" @click="isOpen =       !isOpen"><i class="fa fa-bars"   aria-hidden="true"></i>
             </div>
-            <div class="menu-icon" @click="isOpen = !isOpen"><i class="fa fa-bars" aria-hidden="true"></i>
-           </div>
+
+            <!-- nav-links -->
+
             <div class="links" :class="{ active: isOpen}">
             <RouterLink to="/" @click="closeMenu">Home</RouterLink>
             <RouterLink to="/about" @click="closeMenu">About Us</RouterLink>
             <RouterLink to="/program" @click="closeMenu">Program</RouterLink>
             <RouterLink to="/admission" @click="closeMenu">Admission</RouterLink>
-            <RouterLink to="/testimonial" @click="closeMenu">Testimonial</RouterLink>
             <RouterLink to="/contact" @click="closeMenu">Contact Us</RouterLink>
             </div>
         </div>
@@ -35,75 +43,81 @@ function closeMenu() {
     .menu-icon{
         display: none;
     }
-    nav{
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
    .navbar{
-    background: var(--gradient-main);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 253, 244, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    padding: 0 2rem ;
+   }
+   .nav-menu{
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    font-family: "Open Sans", sans-serif;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid var(--accent);
+    height: 72px;
    }
    .logo{
     display: flex;
     align-items: center;
     gap: 10px;
-   }
-   .logo img{
-    width: 4rem;
-   } 
-
-   .logo a{
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--white);
-    padding: 0 1rem;
     text-decoration: none;
    }
-   .logo a:hover{
-    color: var(--accent);
-    transform: translateY(-2px);
+   .logo img{
+    width: 3rem;
+   } 
+   .logo-text{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+   }
+   .logo-main{
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--coral);
+   }
+   .logo-sub{
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--sky-dark);
+    letter-spacing: 0.5px;
    }
    .links{
     display: flex;
-    gap: 3rem;
     align-items: center;
+    gap: 6px;
+    list-style: none;
    }
-   .links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
+   .links a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--dark);
+    transition: all 0.25s ease;
     position: relative;
-    transition: all 0.3s ease;
-   }
-   .links a:hover {
-    color: var(--accent);
-    transform: translateY(-2px);
-   }
-   .link a.router-link-exact-active{
-    color: var(--accent);
-   }
+    }
+   .links a:hover, .links a.router-link-active {
+    background: rgba(255,107,107,0.1);
+    color: var(--coral);
+    }
    /* Mobile */
    @media (max-width: 768px){
     .menu-icon{
         display: block;
         cursor: pointer;
-        color: var(--white);
+        color: var(--coral);
         font-size: 1.8rem;
         transition: 0.3s;
         }
-        .menu-icon:hover{
-            transform: scale(1.1);
-        }
-    .navbar{
-        padding: 0.5rem;
-    }
     .links{
         position: absolute;
         top: 70px;

@@ -1,516 +1,344 @@
 <script setup>
 import Footer from '@/components/Footer.vue'
-import img1 from '@/assets/bridge.png'
-import img2 from '@/assets/brige.png'
+import program1 from '@/assets/program1.png'
+import program2 from '@/assets/program2.png'
+import program3 from '@/assets/program3.png'
+
+const stats = [
+  { num: '250+', label: 'Happy Kids' },
+  { num: '15+', label: 'Years of Joy' },
+  { num: '30+', label: 'Trained Educators' },
+  { num: '98%', label: 'Parent Satisfaction' },
+]
+
+const whys = [
+  { icon: 'fa-solid fa-child', title: 'Safe Environment', desc: 'CCTV-monitored, child-proof spaces with certified safety standards for total peace of mind.', bg: '#fff3e0' },
+  { icon: 'fa-solid fa-graduation-cap', title: 'Qualified Teachers', desc: 'All educators are certified in early childhood education with years of nurturing experience.', bg: '#e8f5e9' },
+  { icon: 'fa-solid fa-palette', title: 'Creative Curriculum', desc: 'Play-based learning that ignites imagination, critical thinking, and a love for discovery.', bg: '#fce4ec' },
+  { icon: 'fa-solid fa-bowl-food', title: 'Healthy Meals', desc: 'Freshly prepared, nutritious, and delicious meals crafted by our in-house nutritionist.', bg: '#e3f2fd' },
+  { icon: 'fa-solid fa-globe', title: 'Diverse Community', desc: 'We celebrate every culture and background, building empathy and global awareness early.', bg: '#f3e5f5' },
+  { icon: 'fa-solid fa-mobile-screen', title: 'Parent Updates', desc: 'Daily photo updates, reports, and communication through our dedicated parent app.', bg: '#e0f7fa' },
+]
+
 const programs = [
   {
-    id: 1,
-    name: "Nursery Education",
-    icon: "fa fa-book",
-    img: img1,
-    desc: "A fun and safe start to learning through play, creativity, and early literacy skills."
+    name: 'Nursery', age: '1-2 yrs', icon: 'fa-solid fa-rocket',
+    img: program1,
+    desc: 'Gentle introduction to social play, sensory exploration, and early language development.',
+    color: '#FFD93D',
   },
   {
-    id: 2,
-    name: "Primary Education",
-    icon: "fa fa-book",
-    img: img2,
-    desc: "Building strong academic foundations with interactive and engaging lessons."
+    name: 'Toddler Class', age: '2-3 yrs', icon: 'fa-solid fa-puzzle-piece',
+    img: program2,
+    desc: 'Building independence, creativity, and social skills through guided play and storytelling.',
+    color: '#4ECDC4',
   },
   {
-    id: 3,
-    name: "Secondary Education",
-    icon: "fa fa-book",
-    img: img1,
-    desc: "Preparing students for higher education and future success with advanced learning."
-  }
+    name: 'Preschool', age: '3-5 yrs', icon: 'fa-solid fa-child',
+    img: program3,
+    desc: 'School-readiness program with literacy, numeracy, science, arts, and emotional learning.',
+    color: '#FF6B6B',
+  },
 ]
-const stats = [
-   {id: 1, 
-      h3: "20+",
-      p: "Years of Excellence"
-   },
-      {id: 2, 
-      h3: "1500+",
-      p: "Students Enrolled"
-   },
-      {id: 3, 
-      h3: "100+",
-      p: "Qualified Staff"
-   },
-      {id: 4, 
-      h3: "95%",
-      p: "Success Rate"
-   }
+
+const galleryImgs = [
+  { src: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&q=80', alt: 'Art & Craft Time' },
+  { src: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80', alt: 'Outdoor Play' },
+  { src: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80', alt: 'Story Time' },
+  { src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80', alt: 'Music & Dance' },
+  { src: 'https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=400&q=80', alt: 'Learning Together' },
+  { src: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80', alt: 'Playful Reading' },
 ]
-const cards = [
-   {id: 1, 
-    icon: "fa fa-chalkboard-teacher",
-    h3: "Qualified Teachers",
-    p: "Experienced and caring educators guiding every child."
-   },
-   {id: 2, 
-    icon: "fa fa-school",
-    h3: "Modern Facilities",
-    p: "Well-equipped classrooms for effective learning."
-   },
-   {id: 3, 
-    icon: "fa fa-shield-alt",
-    h3: "Safe Environment",
-    p: "A secure and friendly place for children to grow."
-   },
-   {id: 4, 
-    icon: "fa fa-star",
-    h3: "Strong Values",
-    p: "We build character and discipline alongside academics."
-   },
-   {id: 5, 
-    icon: "fa fa-laptop",
-    h3: "Tech Learning",
-    p: "Preparing students for the digital future."
-   },
-   {id: 6, 
-    icon: "fa fa-school",
-    h3: "Modern Facilities",
-    p: "Well-equipped classrooms for effective learning."
-   }
+
+const testimonials = [
+  { avatar: '👩', name: 'Sarah M.', child: 'Lily (4 yrs)', text: 'My daughter absolutely loves going to school every morning! The teachers are so warm and attentive. Best decision we ever made.' },
+  { avatar: '👨', name: 'James K.', child: 'Noah (3 yrs)', text: 'From day one, Noah has blossomed into a confident, curious little boy. The curriculum is amazing and the staff truly care.' },
+  { avatar: '👩', name: 'Priya L.', child: 'Mia (5 yrs)', text: 'We were worried about transition to big school but Sunshine Sprouts prepared Mia beautifully. She was so ready!' },
 ]
+
 </script>
 
 <template>
-        <section id="home">
-            <div class="banner">
-                <div class="banner-text">
-                   <p class="welcome"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Welcome to Ascend</p>
-
-                   <h1>Learning Made <span>Fun</span></h1>
-                   <p class="great">Where Every Child Shines</p>
-                   <p class="empower">
-                     We help children grow, explore and succed in a fun and safe environment.
-                   </p>
-
-                   <RouterLink to="/Contact"><button class="btn"><i class="fa fa-phone" aria-hidden="true"></i>
-                  Contact Us</button></RouterLink>
-                </div>
-
-                <div class="banner-image">
-                  <img src="../assets/banner-image.jpg" alt="">
-                </div>
+   <!-- HERO SECTION -->
+   <section class="hero">
+   <div class="hero-inner">
+      <div class="hero-text">
+         <div class="badge">Enrolment Open 2025!</div>
+         <h1 class="hero-title">
+            Where Little Stars 
+            <span class="highlight">Shine Bright!</span>
+         </h1>
+         <p class="hero-desc">A magical world of learning, laughter and love. We nurture every child's curiosity, creativity and confidence from Day 1.</p>
+         <div class="hero-actions">
+            <router-link to="/admission" class="btn btn-primary">
+              <i class="fas fa-star"></i> Enroll Now
+            </router-link>
+            <router-link to="/programs" class="btn  btn-outline">
+              <i class="fas fa-play-circle"></i> Our Programs
+            </router-link>
+         </div>
+         <div class="hero-stats">
+            <div class="stat" v-for="s in stats" :key="s.label">
+              <span class="stat-num">{{ s.num }}</span>
+              <span class="stat-label">{{ s.label }}</span>
             </div>
-            <div class="bridge">
-                <div class="grid">
-                  <div class="grid-image">
-                     <img src="../assets/learning.png" alt="">
-                  </div>
-                  <div class="grid-text">
-                     <h2>Learning with joy</h2>
-                     <p>At Ascend School, we create a fun and engaging environment where children grow academically, socially and creativity. </p>
+         </div>
+      </div>
+      <div class="hero-visual">
+         <div class="hero-img">
+            <img src="../assets/happykid.png" alt="">
+         </div>
+      </div>
+   </div>
+   </section>
 
-                     <div class="features">
-                        <p><i class="fa fa-book"></i>Interactive Learning</p>
-                        <p><i class="fa fa-paint-brush"></i>Creative Activities</p>
-                        <p><i class="fa fa-chalkboard-teacher"></i>Caring Teachers</p>
-                     </div>
-                  </div>
-                </div>
+   <!-- WHY US -->
+   <section class="why-section">
+      <div class="section">
+        <div class="badge">Why Choose Us?</div>
+        <h2 class="section-title">A Place Called <span style="color:var(--coral)">Home</span></h2>
+        <p class="section-subtitle">Everything we do is for the happiness, safety, and growth of your little ones.</p>
+
+         <div class="why-grid">
+          <div class="why-card" v-for="w in whys" :key="w.title">
+             <i :class="w.icon" :style="{background: w.bg}"></i>
+            <h3>{{ w.title }}</h3>
+            <p>{{ w.desc }}</p>
+          </div>
+         </div>
+      </div>
+   </section>     
+   <!-- PROGRAM PROGRAM-->
+    <section class="programs-preview-section">
+      <div class="section">
+        <div class="badge"> Our Programs</div>
+        <h2 class="section-title">Learning That <span style="color:var(--sky-dark)">Feels Like Play</span></h2>
+        <p class="section-subtitle">Age-appropriate curricula designed to spark wonder and build strong foundations.</p>
+
+        <div class="programs-grid">
+          <div class="prog-card card" v-for="p in programs" :key="p.name">
+            <div class="prog-img-wrap">
+              <img :src="p.img" :alt="p.name" class="prog-img" />
+              <div class="prog-badge">{{ p.age }}</div>
             </div>
-            <!-- stats -->
-             <div class="stats">
-               <div class="stat" v-for="stat in stats" :key="stat.id">  
-                  <i class="fa fa-users"></i>
-                  <h3>{{ stat.h3 }}</h3>
-                  <p>{{ stat.p }}</p>
-               </div>
-             </div>
-            <!--  programs -->
-             <div class="section">
-             <h2>Our Programs</h2>
-
-             <div class="programs-grid">
-             <div class="program-card" v-for="program in programs" :key="program.id">
- 
-              <div class="img-box">
-                <img :src="program.img" alt="">
-              </div>
-
-               <div class="program-content">
-               <i :class="program.icon"></i>
-               <h3>{{ program.name }}</h3>
-               <p>{{ program.desc }}</p>
-               </div>
-
-              </div>
-              </div>
-             <div class="program-btn">
-             <RouterLink to="/program">
-             <button class="btn">View All Programs</button>
-             </RouterLink>
-             </div>
+            <div class="prog-body">
+              <i :class="p.icon"></i>
+              <h3>{{ p.name }}</h3>
+              <p>{{ p.desc }}</p>
+              <router-link to="/programs" class="btn btn-secondary" style="margin-top:12px;font-size:0.9rem;padding:10px 22px;">Learn More</router-link>
             </div>
-
-             <!-- why choose us -->
-            <div class="section-choose">
-              <h2>Why Choose Us</h2>
-
-             <div class="why-grid">
-              <div class="why-card" v-for="card in cards" :key="card.id">
-               <i :class="card.icon"></i>
-               <h3>{{ card.h3 }}</h3>
-               <p>{{ card.p }}</p>
-              </div>
-             </div>
-           </div>
-              <!-- CTA -->
-               <div class="cta">
-                  <div class="cta-content">
-                     <h2>Enroll Your Child Today</h2>
-                     <p>Give your child the best start in life with quality education, caring teachers, and a fun learning environment.</p>
-
-                     <router-link to="/admission">
-                        <button class="btn cta-btn">Apply Now</button>
-                     </router-link>
-                  </div>
-               </div>
+          </div>
+        </div>
+      </div>
+    </section>
             <section>
                <Footer/>
             </section>
 
-        </section>
 </template>
 
 <style scoped>
-html{
-   scroll-behavior: smooth;
+/* HERO */
+
+.hero {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe8e8 40%, #e8f8f5 100%);
+  padding: 60px 40px 100px;
+  overflow: hidden;
 }
-   #home{
-      animation: slideInLeft 1s ease-out;
-   }
-   @keyframes slideInLeft{
-      0%{
-         transform: translateX(-100px);
-      }
-      100%{
-         transform: translateX(0);
-      }
-   }
-    .banner{
-        padding: 2rem;
-        min-height:80vh;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        justify-content: space-between;
-        background: var(--gradient-main);
-        color: var(--white);
-    }
-    .banner-image img{
-      width: 500px;
-      border-radius: 2rem;
-      margin-left: 2rem;
-      margin-top: 1rem;
-      cursor: pointer;
-      transition: 0.5s;
-    }
-    .banner-image img:hover{
-      transform: scale(1.05);
-    }
-     .welcome{
-        padding: 0.3rem 0.5rem;
-        font-size: 0.8rem;
-        background: var(--accent);
-        color: var(--text-dark);
-        width: fit-content;
-        border-radius: 2rem;
-        font-weight: bold;
-     }
-     .welcome i{
-        padding-right: 0.9rem;
-     }
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-text { 
+   animation: fadeInUp 0.8s ease both; 
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.15;
+  margin: 12px 0 18px;
+}
+.highlight {
+  background: linear-gradient(135deg, var(--coral), var(--sunny));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.hero-desc { 
+   font-size: 1.1rem; 
+   color: #666; 
+   line-height: 1.8; 
+   margin-bottom: 30px; 
+}
+.hero-actions { 
+   display: flex; 
+   gap: 14px; 
+   flex-wrap: wrap; 
+   margin-bottom: 40px; 
+}
+.hero-stats { 
+   display: flex; 
+   gap: 28px; 
+   flex-wrap: wrap; 
+}
+.stat { 
+   display: flex; 
+   flex-direction: column; 
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--coral);
+  line-height: 1;
+}
+.stat-label { 
+   font-size: 0.78rem; 
+   color: #888; 
+   font-weight: 600; 
+   text-transform: uppercase; 
+   letter-spacing: 0.5px; 
+}
+.hero-visual{
+   animation: fadeInUp 0.9s 0.2s ease both;
+}
+.hero-img{
+  overflow: visible;
+}
+.hero-img img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 32px;
+  box-shadow: var(--shadow-lg);
+}
 
-     .banner h1{
-        padding-top: 2rem;
-        font-size: 4rem;
-        color: var(--accent);
-     }
-     .banner span{
-        color: var(--text-dark);
-     }
-     .great{
-        font-size: 1.8rem ;
-        color: var(--text-dark);
-        font-weight: bold;
-     }
-     .empower{
-        color: rgb(253, 241, 241);
-        font-size: 1.5rem;
-        padding-top: 1rem;
-     }
-     .btn{
-         padding: 0.8rem 2rem;
-         margin-top: 1.5rem;
-         border: none;
-         background: var(--accent);
-         color: var(--text-dark);
-         font-size: 1rem;
-         border-radius: 2rem;
-         font-weight: bold;
-         transition: 0.3s ease;
-         cursor: pointer;
-         text-align: center;
-     }
-     .btn:hover{
-      background: var(--text-dark);
-      color: var(--white);
-      transform: scale(1.05);
-     }
-     .bridge{
-        background: var(--pink);
-        padding: 5rem 4rem;
-     }
-     .grid{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-      align-items: center;
-     }
-     .grid-image img{
-      width: 100%;
-      border-radius: 1.5rem;
-      cursor: pointer;
-     }
-     .grid-image img:hover{
-     transform: scale(1.03);
-     transition: 0.3s ease;
-   }
-    .grid-text{
-      background: var(--p);
-    }
-     .grid-text h2{
-      font-size: 2.5rem;
-      color: var(--white);
-      margin-bottom: 1rem;
-     }
-     .grid-text p{
-      font-size: 1.5rem;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-     }
-     .features p{
-      background: var(--green);
-      padding: 0.7rem 1rem;
-      margin: 0.5rem 0;
-      border-radius: 10px;
-      font-size: 1.3rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-     }
-     .features i{
-       font-size: 2.5rem;
-       padding-right: 2rem;
-       color: var(--text-dark);
-     }
-     .stats{
-      background: var(--gradient-main);
-      text-align: center;
-      padding: 3rem 1rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-     }
-     .stat{
-      background: var(--white);
-      margin: 1rem;
-      padding: 1.5rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-     }
-     .stat:hover{
-      transform: translateY(-5px);
-     }
-     .stat i{
-      font-size: 2rem;
-      color: var(--pink);
-     }
-     .stat h3{
-      font-size: 3rem;
-      color: var(--primary);
-     }
-     .stat p{
-      font-size: 1rem;
-      color: var(--white);
-     }
-     .section{
-      background: var(--pink);
-      padding: 2rem;
-      /* text-align: center; */
-     }
-     .program-btn{
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-     }
-     .section h2{
-      text-align: center;
-      color: var(--text-light);
-      font-size: 2.5rem;
-     }
-     .programs-grid{
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     gap: 2rem;
-     margin-top: 2rem;
-     }
+/* WHY SECTION */
+.why-section { 
+   background: linear-gradient(135deg, #fff3e0, #fce4ec); 
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.why-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  cursor: default;
+}
+.why-card:hover {
+  transform: translateY(-10px) rotate(-1deg) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+.why-card i {
+  width: 70px; 
+  height: 70px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 2rem;
+  margin: 0 auto 16px;
+}
+.why-card h3 { 
+   font-family: var(--font-display); 
+   font-size: 1.1rem; 
+   font-weight: 700; 
+   margin-bottom: 8px; 
+   color: var(--dark); 
+}
+.why-card p { 
+   font-size: 0.88rem; 
+   color: #777; 
+   line-height: 1.7; 
+}
 
-/* CARD STYLE */
-    .program-card{
-    background: var(--primary);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-    transition: 0.3s ease;
-    }
-
-   .program-card:hover{
-    transform: translateY(-8px);
-   }
-
-/* IMAGE */
-   .img-box img{
-   width: 100%;
-   height: 180px;
-   object-fit: cover;
-  }
-
-/* CONTENT */
-  .program-content{
-   padding: 1rem;
-   text-align: left;
-   }
-
-  .program-content i{
-   font-size: 3rem;
-   color: var(--text-dark);
-   }
-
-   .program-content h3{
-    color: var(--text-dark);
-    margin: 0.5rem 0;
-    font-size: 2rem;
-    }
-
-   .program-content p{
-    color: var(--text-light);
-    font-size: 1.1rem;
-    line-height: 1.4rem;
-    }
-     .section-choose{
-      background: var(--gradient-warm);
-      padding: 2rem;
-     }
-     .section-choose h2{
-      font-size: 2rem;
-      color: var(--text-dark);
-      text-align: center;
-     }
-     .why-grid{
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     gap: 2rem;
-     margin-top: 2rem;
-     }
-    .why-card{
-     background: var(--green);
-     padding: 2rem 1.5rem;
-     border-radius: 20px;
-     text-align: center;
-     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-     transition: 0.3s ease;
-     }
-
-    .why-card:hover{
-    transform: translateY(-8px);
-    }
-
-    .why-card i{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-    }
-
-    .why-card h3{
-    color: var(--secondary);
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    }
-
-    .why-card p{
-    color: var(--white);
-    font-size: 1.2rem;
-    cursor: pointer;
-    }
-    .cta{
-      background: var(--gradient-main);
-      color: var(--white);
-      padding: 4rem 2rem;
-      margin-top: 3rem;
-      text-align: center;
-      border-radius: 2rem;
-      overflow: hidden;
-    }
-     .cta h2{
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-     }
-     .cta p{
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: var(--text-dark);
-     }
-     /* mobile */
-     @media (max-width: 768px){
-      .banner{
-         grid-template-columns: repeat(1,1fr);
-         min-height: 80vh;
-         padding: 2rem 1rem;
-      }
-      .welcome{
-         width: fit-content;
-         font-size: 0.7rem;
-         padding: 0.4rem 1rem;
-      }
-      .banner h1{
-         font-size: 2.5rem;
-      }
-      .banner-image img{
-         width: 400px;
-      }
-      .great{
-         font-size: 1.2rem;
-      }
-      .empower{
-         font-size: 1rem;
-      }
-     .grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 2rem 1rem;
-     }
-     .grid1{
-      font-size: 4rem;
-     }
-     .grid2{
-      font-size: 1rem;
-      text-align: start;
-      line-height: 1.6rem;
-     }
-     .stats{
-      grid-template-columns: repeat(2, 1fr);
-     }
-     .why-grid{
-     grid-template-columns: 1fr;
-     }
-     .programs-grid{
-      grid-template-columns: repeat(1, 1fr);
-     }
-     }
-
+/* PROGRAM SECTION */
+.programs-preview-section { 
+   background: var(--cream); 
+}
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.prog-card { 
+   position: relative; 
+}
+.prog-img-wrap { 
+   position: relative; 
+   height: 200px; 
+   overflow: hidden; 
+}
+.prog-img { 
+   width: 100%; 
+   height: 100%; 
+   object-fit: cover; 
+   transition: transform 0.5s ease; 
+}
+.prog-card:hover .prog-img { 
+   transform: scale(1.08); 
+}
+.prog-badge {
+  position: absolute; top: 14px; right: 14px;
+  background: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: var(--dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.prog-body { 
+   padding: 24px; 
+}
+.prog-body i { 
+   font-size: 2rem; 
+   margin-bottom: 8px; 
+}
+.prog-body h3 { 
+   font-family: var(--font-display); 
+   font-size: 1.2rem; 
+   font-weight: 700; 
+   margin-bottom: 8px; 
+   color: var(--dark); 
+}
+.prog-body p { 
+   font-size: 0.88rem; 
+   color: #777; 
+   line-height: 1.7; 
+}
+.prog-body::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--card-color, var(--coral));
+  margin: -24px -24px 20px;
+  border-radius: 0;
+}
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .programs-grid { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 40px 20px 60px; }
+  .why-grid { grid-template-columns: 1fr; }
+  .programs-grid { grid-template-columns: 1fr; }
+}
 </style>

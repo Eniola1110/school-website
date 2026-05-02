@@ -1,139 +1,167 @@
 
 <script setup>
+const navLinks = [
+     { path: '/', label: 'Home'},
+     { path: '/about', label: 'About Us'},
+     { path: '/programs', label: 'Programs',},
+     { path: '/admission', label: 'Admission'},
+     { path: '/contact', label: 'Contact'},
+]
 
 </script>
 
 <template>
-       <footer>
-        <div class="grid">
-            <div class="grid1">
-            <div>
-                <img src="../assets/ascendlogo.png" alt="">
-                <h3>Ascend School Hub</h3>
-                <p>"Inspiring Greatness"</p>
-            </div>
-            <p>Empowering young minds through world-class education, innovation, and character development</p>
-            </div>
-
-            <div class="grid2">
-                <h2>Quick Links</h2>
-            <div class="footer-links">
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/about">About Us</RouterLink>
-            <RouterLink to="/program">Program</RouterLink>
-            <RouterLink to="/admission">Admission</RouterLink>
-            <RouterLink to="/testimonial">Testimonial</RouterLink>
-            <RouterLink to="/contact">Contact Us</RouterLink>
-            </div>
-            </div>
-
-            <div class="grid3">
-                <h2>Contact Info</h2>
-                <div>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +234 8054632543</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> ascendschool26@gmail.com</p>
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Lagos, Nigeria</p>
+    <footer class="footer">
+        <div class="footer-body">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="../assets/ascendlogo.png" alt=""> Kell's School</div>
+                    <p>Where little minds bloom and dreams begin. A safe, joyful and nurturing space for every child.</p>
+                  <div class="socials">
+                    <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li v-for="link in navLinks" :key="link.path">
+                        <router-link :to="link.path">{{ link.label }}</router-link>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Programs</h4>
+                    <ul>
+                      <li><a href="#">Nursery (1-2 yrs)</a></li>
+                      <li><a href="#">Toddlers (2-3 yrs)</a></li>
+                     <li><a href="#">Preschool (3-5 yrs)</a></li>
+                     <li><a href="#">After School Care</a></li>
+                     <li><a href="#">Holiday Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>contact</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i>13 Estaport Avenue, Sholuyi, Gbagada, Lagos</li>
+                        <li><i class="fas fa-phone"></i> +234 801 654 7896</li>
+                       <li><i class="fas fa-envelope"></i> hello@kellschool.com</li>
+                      <li><i class="fas fa-clock"></i> Mon-Fri: 7:30 AM - 5:30 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Kell's School Preschool & Nursery. Made with love for little ones.</p>
                 </div>
             </div>
         </div>
-        <p>&copy; 2026 Ascend School. All rights reserved.</p>
-        <p>Terms of Services. Privacy Policy.</p>
-       </footer>
-    
+    </footer>
+      
 </template>
 <style scoped>
-footer{
-    font-family: "Open Sans", sans-serif;
-    margin-top: 2rem;
-    padding: 2rem 3rem;
-    border-top: 1px solid var(--secondary);
-    color: var(--white);
-    background: var(--gradient-warm);
+.footer-body {
+    background: var(--dark);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 60px 40px 30px;
 }
-.grid{
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin-bottom: 2.5rem;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 48px;
 }
-.grid1 img{
-    width: 4rem;
+.footer-brand p{
+    font-size: 0.9rem;
+    line-height: 1.8;
+    opacity: 0.8;
+    margin: 14px 0 20px;
 }
-.grid1 h3{
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-dark);
-    margin-top: 0.5rem;
+.footer-logo{
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--sunny);
 }
-.grid1 p{
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    opacity: 0.9;
+.footer-logo img{
+    width: 3rem;
 }
-.grid2{
-    text-align: center;
-}
-.grid2 h2{
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-}
-.grid2 .footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.grid2 a {
-  color: var(--white);
-  text-decoration: none;
-  transition: 0.3s;
-}
-.grid2 a:hover {
-  transform: translateX(5px);
-}
-.grid3 h2 {
-  margin-bottom: 1rem;
-  color: var(--text-dark);
-}
-
-.grid3 p {
-  margin-bottom: 10px;
-  opacity: 0.9;
-}
-
-.grid3 i {
-  margin-right: 8px;
-  color: var(--text-dark);
-}
-footer > p {
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 10px;
-  color: var(--text-dark);
-}
-
-/* mobile */
-@media (max-width: 768px){
-.grid {
-    grid-template-columns: repeat(1, 1fr);
-}
-.grid2 .footer-links{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.grid2 h2{
-    text-align: start;
-    margin-top: 1rem;
-}
-.grid2 a{
+.socials {
     display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
-.grid3 h2{
-    margin-top: 1rem;
+.social-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 0.9rem;
+  transition: var(--transition);
 }
-}
-@media (min-width: 769px) and (max-width: 1130px){
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
+.social-btn:hover { 
+    background: var(--coral); 
+    transform: translateY(-3px) scale(1.1); 
     }
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sunny);
+  margin-bottom: 18px;
+}
+.footer-col ul { 
+    list-style: none; 
+}
+.footer-col ul li { 
+    margin-bottom: 10px; 
+}
+.footer-col ul li a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { 
+    color: var(--sunny); 
+}
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.contact-list li i { 
+    color: var(--sunny);
+    margin-top: 3px; 
+    min-width: 16px; 
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .footer-grid { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 32px; 
+}
+}
+@media (max-width: 768px) {
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 28px; 
+}
+  .footer-body {
+    padding: 40px 20px 24px; 
+}
 }
 </style>
