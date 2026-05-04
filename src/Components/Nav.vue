@@ -31,7 +31,7 @@ function closeMenu() {
             <div class="links" :class="{ active: isOpen}">
             <RouterLink to="/" @click="closeMenu">Home</RouterLink>
             <RouterLink to="/about" @click="closeMenu">About Us</RouterLink>
-            <RouterLink to="/program" @click="closeMenu">Program</RouterLink>
+            <!-- <RouterLink to="/program" @click="closeMenu">Program</RouterLink> -->
             <RouterLink to="/admission" @click="closeMenu">Admission</RouterLink>
             <RouterLink to="/contact" @click="closeMenu">Contact Us</RouterLink>
             </div>
@@ -111,6 +111,7 @@ function closeMenu() {
     }
    /* Mobile */
    @media (max-width: 768px){
+    
     .menu-icon{
         display: block;
         cursor: pointer;
@@ -122,7 +123,7 @@ function closeMenu() {
         position: absolute;
         top: 70px;
         right: 0;
-        background: var(--gradient-main);
+        background: var(--white);
         flex-direction: column;
         width: 100%;
         text-align: center;

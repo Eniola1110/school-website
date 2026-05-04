@@ -41,19 +41,10 @@ const programs = [
   },
 ]
 
-const galleryImgs = [
-  { src: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&q=80', alt: 'Art & Craft Time' },
-  { src: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80', alt: 'Outdoor Play' },
-  { src: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80', alt: 'Story Time' },
-  { src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80', alt: 'Music & Dance' },
-  { src: 'https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=400&q=80', alt: 'Learning Together' },
-  { src: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80', alt: 'Playful Reading' },
-]
-
 const testimonials = [
-  { avatar: '👩', name: 'Sarah M.', child: 'Lily (4 yrs)', text: 'My daughter absolutely loves going to school every morning! The teachers are so warm and attentive. Best decision we ever made.' },
-  { avatar: '👨', name: 'James K.', child: 'Noah (3 yrs)', text: 'From day one, Noah has blossomed into a confident, curious little boy. The curriculum is amazing and the staff truly care.' },
-  { avatar: '👩', name: 'Priya L.', child: 'Mia (5 yrs)', text: 'We were worried about transition to big school but Sunshine Sprouts prepared Mia beautifully. She was so ready!' },
+  { name: 'Sarah M.',  text: 'My daughter absolutely loves going to school every morning! The teachers are so warm and attentive. Best decision we ever made.' },
+  { name: 'James K.',  text: 'From day one, Noah has blossomed into a confident, curious little boy. The curriculum is amazing and the staff truly care.' },
+  { name: 'Priya L.', text: 'We were worried about transition to big school but Kells School prepared Mia beautifully. She was so ready!' },
 ]
 
 </script>
@@ -131,6 +122,37 @@ const testimonials = [
         </div>
       </div>
     </section>
+
+    <!-- TESTIMONIAL -->
+     <section class="testimonials-section">
+      <div class="section">
+        <div class="badge"> Parent Stories</div>
+        <h2 class="section-title">What <span style="color:var(--lavender-dark)">Parents Say</span></h2>
+        <div class="testimonials-grid">
+          <div class="testi-card card" v-for="t in testimonials" :key="t.name">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testi-text">"{{ t.text }}"</p>
+            <div class="testi-author">
+              <div>
+                <strong>{{ t.name }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>Ready to Start the <span>Journey?</span></h2>
+        <p>Join our Kell's School family today. Limited spots available — don't miss out!</p>
+        <div class="cta-actions">
+          <router-link to="/admission" class="btn btn-primary">Apply Now </router-link>
+          <router-link to="/contact" class="btn" style="background:white;color:var(--coral);">Book a Visit </router-link>
+        </div>
+      </div>
+    </section>
+
             <section>
                <Footer/>
             </section>
@@ -329,6 +351,83 @@ const testimonials = [
   margin: -24px -24px 20px;
   border-radius: 0;
 }
+/* TESTIMONIALS */
+.testimonials-section { 
+  background: linear-gradient(135deg, #f3e5f5, #e8eaf6); 
+}
+.testimonials-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px; 
+}
+.testi-card { 
+  padding: 32px 28px; 
+}
+.stars { 
+  font-size: 1.1rem; 
+  margin-bottom: 14px; 
+}
+.testi-text { 
+  font-size: 0.92rem; 
+  line-height: 1.8; 
+  color: #555; 
+  margin-bottom: 20px; 
+  font-style: italic; 
+}
+.testi-author { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+}
+
+.testi-author strong { 
+  display: block; 
+  font-family: var(--font-display); 
+  font-weight: 700; 
+  color: var(--dark); 
+}
+/*  CTA  */
+.cta-section {
+  background: linear-gradient(135deg, var(--coral) 0%, var(--sunny-dark) 100%);
+  text-align: center;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner { 
+  position: relative; 
+  z-index: 1; 
+  max-width: 700px; 
+  margin: 0 auto; 
+}
+.cta-emojis { 
+  font-size: 2rem; 
+  margin-bottom: 20px; 
+  letter-spacing: 8px; 
+  animation: bounce 2s ease-in-out infinite; 
+}
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+}
+.cta-section h2 span { 
+  color: var(--dark); 
+}
+.cta-section p { 
+  color: rgba(255,255,255,0.85); 
+  font-size: 1.05rem; 
+  margin-bottom: 36px; 
+}
+.cta-actions { 
+  display: flex; 
+  gap: 16px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { display: none; }

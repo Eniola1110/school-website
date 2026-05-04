@@ -1,191 +1,300 @@
 <script setup>
 import Footer from '@/components/Footer.vue';
-import img1 from '@/assets/bridge.png'
-import Img2 from '@/assets/brige.png'
+const milestones = [
+  { year: '2016', title: 'Founded with 12 Kids', desc: 'Mrs. Thompson opens the doors of Sunshine Sprouts with one classroom and a heart full of hope.' },
+  { year: '2018', title: 'New Building Opens', desc: 'Growing demand leads to our beautiful dedicated campus with outdoor gardens and 6 classrooms.' },
+  { year: '2020', title: 'Best Preschool Award', desc: 'Recognized as the City\'s Best Preschool by the Early Childhood Education Board.' },
+  { year: '2022', title: 'Diversity Program Launch', desc: 'Launched our cultural diversity curriculum, celebrating 20+ nationalities in our community.' },
+  { year: '2024', title: 'Parent App Goes Live', desc: 'Launched our dedicated parent app for daily updates, real-time communication, and photo sharing.' },
+  { year: '2026',  title: '250+ Children Enrolled', desc: 'Milestone year as we welcome our 250th child and expand with a new STEM learning lab.' },
+]
 
-const visions = [
-  {id: 1, 
-   name: "Our Vision", 
-   para: "Our vision is to be forefront in the private education sector and to nurture the children to become all they can be, through quality all-round education, from nursery to secondary level.",
-   image: img1,
-  },
-  {id: 2, 
-  name: "Our Mission", 
-  para: "We are dedicated to the general advancement of humanity, through quality education, dedicated service and total commitment. With our light and love the best is our lot.",
-  image: Img2,
-  },
-  {id: 3, 
-   name: "Our Promise", 
-   para: "Every child receives personalized attention, world-class resources, and opportunities to discover their unique greatness",
-   image: img1,
-  },
-  ]
-  const policies = [
-  {title: "policy1",
-   name: "School Policy", 
-   para: "The School Policy serves as a guiding document that outlines the rules, regulations and expectations for students, staff and parents within all school premises, including nursery, primary and secondary schools. This comprehensive Policy provides clarity and consistency in matters pertaining to academic performance, behaviour, attendance, health and safety, discipline and school culture. The Policy is designed to create a positive and conducive learning environment that fosters the holistic development of students.",
-  },
-  {title: "policy2",
-   name: "Child Protection Policy", 
-   para: "The Child Protection Policy is a omprehensive framework designed to ensure the safety, well-being and protection of children within all school premises, including nursery, primary and secondary schools. This policy outlines the guidelines, procedures and responsibilities that the institution, staff, parents and students must adhere to in order to create a secure and nurturing environment for all children.",
-  },
+const accreds = [
+  { icon: 'fa-solid fa-medal', name: 'National ECE Accreditation', year: '2016 - Present' },
+  { icon: 'fa-solid fa-star', name: 'Outstanding School Award', year: '2018, 2010, 2021' },
+  { icon: 'fa-solid fa-leaf', name: 'Eco-Friendly School Cert.', year: '2018- Present' },
+  { icon: 'fa-solid fa-lock', name: 'Child Safety Gold Standard', year: '2020 - Present' },
+  { icon: 'fa-solid fa-graduation-cap', name: 'STEM Education Partner', year: '2022 – Present' },
+  { icon: 'fa-solid fa-rainbow', name: 'Inclusive Education Badge', year: '2017 - Present' },
 ]
 </script>
 <template>
-    <section id="about">
-      <div class="container">
-        <header>
-        <h1>ABOUT US</h1>
-        <P>For over a decade, we have been shaping the leaders of tomorrow through excellence in education, character building and innovation.</P>
-        </header>
-        <div class="values">
-          <h2>Core Values</h2>
-          <ul>
-            <li>Discipline</li>
-            <li>Integrity</li>
-            <li>Professionalism</li>
-            <li>Love</li>
-            <li>Excellence</li>
-          </ul>
+  <div class="about">
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="about-hero-inner">
+        <div class="badge">About Us</div>
+        <h1>Where Every Child <span class="highlight-text">Truly Belongs</span></h1>
+        <p>For over 10 years, Kell's School has been the heart of early childhood education — a place where love, learning, and laughter go hand in hand.</p>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="section story-section">
+      <div class="story-grid">
+        <div class="story-images">
+          <img src="../assets/storyimage.png" alt="Our School" class="story-img-main" />
         </div>
-        <div class="vision">
-          <div class="card" v-for="vision in visions" :key="vision.id">
-            <img :src="vision.image" />
-            <h2>{{ vision.name }}</h2>
-            <p>{{ vision.para }}</p>
+        <div class="story-content">
+          <div class="badge">Our Story</div>
+          <h2 class="section-title" style="text-align:left;margin-bottom:16px;">Started With a <span style="color:var(--coral)">Dream</span></h2>
+          <p>In 2016, our founder Mrs. Helen Thompson opened Kell's School with a simple dream: to create a preschool where every child felt seen, loved, and excited to learn.</p>
+          <p style="margin-top:14px;">What started as a single classroom with 12 children has grown into a vibrant community of over 250 young learners, 30 dedicated educators, and hundreds of families who call us their second home.</p>
+          <p style="margin-top:14px;">Today, we remain committed to that original dream — nurturing the whole child through play-based learning, creative exploration, and a warm, inclusive community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-section">
+      <div class="section">
+        <div class="mv-grid">
+          <div class="mv-card">
+            <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Our Mission</h3>
+            <p>To foster a safe, stimulating, and inclusive environment where every child can grow holistically — intellectually, emotionally, socially, and physically — through joyful, play-based learning.</p>
+          </div>
+          <div class="mv-card">
+            <div class="mv-icon"><i class="fa-solid fa-star"></i></div>
+            <h3>Our Vision</h3>
+            <p>To be the most trusted and beloved early learning community, raising confident, compassionate, and curious children who are ready to shape a brighter tomorrow.</p>
+          </div>
+          <div class="mv-card">
+            <div class="mv-icon"><i class="fa-solid fa-gem"></i></div>
+            <h3>Our Values</h3>
+            <p>Love, Respect, Curiosity, Inclusivity, and Fun. These five principles guide every interaction, every lesson, and every decision we make for your children.</p>
           </div>
         </div>
-        <div class="codes">
-          <h2>CODES & POLICIES</h2>
-          <div class="policy" v-for="policy in policies" :key="policy.title">
-            <h1 class="grid1">{{ policy.name }}</h1>
-            <p class="grid2">{{ policy.para }}</p>
+      </div>
+    </section>
+
+   
+    <!-- Milestones -->
+    <section class="milestones-section">
+      <div class="section">
+        <div class="badge"> Our Journey</div>
+        <h2 class="section-title">15 Years of <span style="color:var(--sunny-dark)">Growing</span></h2>
+        <div class="timeline">
+          <div class="timeline-item" v-for="m in milestones" :key="m.year">
+            <div class="timeline-card card">
+              <span class="timeline-year">{{ m.year }}</span>
+              <h3>{{ m.title }}</h3>
+              <p>{{ m.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accreditations -->
+    <section class="accred-section">
+      <div class="section">
+        <div class="badge"> Accreditations</div>
+        <h2 class="section-title">Certified & <span style="color:var(--grass-dark)">Award-Winning</span></h2>
+        <div class="accred-grid">
+          <div class="accred-card" v-for="a in accreds" :key="a.name">
+            <div class="accred-icon"><i :class="a.icon"></i></div>
+            <strong>{{ a.name }}</strong>
+            <span>{{ a.year }}</span>
           </div>
         </div>
       </div>
     </section>
     <section>
-      <Footer />
+      <Footer/>
     </section>
+  </div>
 </template>
 
 <style scoped>
-#about{
-  animation: slideInLeft 1s ease-out;
-  /* font-family: "Open Sans", sans-serif; */
-  margin-top: 3rem;
-}
-   @keyframes slideInLeft{
-      0%{
-         transform: translateX(-100px);
-      }
-      100%{
-         transform: translateX(0);
-      }
-    }
-header{
+.about-hero {
+  background: linear-gradient(135deg, #e8f5e9, #fff9c4, #ffe0f0);
+  padding: 100px 40px 0;
   text-align: center;
+  overflow: hidden;
 }
-header h1{
-  font-size: 4rem;
-  color: var(--secondary);
-  margin-bottom: 1rem;
+.about-hero-inner { 
+  max-width: 750px; 
+  margin: 0 auto 60px; 
+  animation: fadeInUp 0.7s ease both; 
 }
-header p{
-  color: var(--white);
-  font-size: 1rem;
-  max-width: 700px;
-  margin: auto;
+.about-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--dark);
+  margin: 14px 0 18px;
 }
-.values{
-  background: var(--white);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  margin-top: 2rem;
-  min-height: 40vh;
-  border-radius: 1rem;
+.highlight-text {
+  background: linear-gradient(135deg, var(--sky-dark), var(--lavender-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.values h2{
-  font-weight: bold;
-  color: var(--secondary);
-  font-size: 3.5rem;
-  text-align: center;
+.about-hero p { 
+  font-size: 1.1rem; 
+  color: #666; 
+  line-height: 1.8; 
+  max-width: 600px; 
+  margin: 0 auto; 
 }
-.values li{
-  list-style: none;
-  color: var(--primary);
-  font-size: 1.2rem;
+/* STORY */
+.story-section { 
+  padding-top: 40px !important; 
 }
-.vision{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 3rem;
-  gap: 3rem;
-  padding: 1rem 2rem;
+.story-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 60px; 
+  align-items: center; 
 }
-.card{
-  background: var(--white);
-  text-align: center;
-  padding: 2rem 0;
-  border-radius: 2rem;
-  padding-top: 0;
-  cursor: pointer;
+.story-img-main { 
+  width: 100%; 
+  height: 380px; 
+  object-fit: cover; 
+  border-radius: 28px; 
+  box-shadow: var(--shadow-lg); 
 }
-.card img{
-  width: 100%;
-  border-radius: 2rem;
+.story-content p { 
+  color: #666; 
+  line-height: 1.9; 
+  font-size: 0.95rem; 
 }
-.card h2{
-  font-size: 2rem;
-  color: var(--secondary);
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+/* MISSION */
+.mission-section { 
+  background: linear-gradient(135deg, #e3f2fd, #e8f5e9); 
 }
-.card p{
-  color: var(--primary);
-  padding: 0 0.5rem;
+.mv-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px; 
 }
-.codes h2{
-  text-align: center;
-  font-size: 3rem;
-  color: var(--secondary);
-  margin-top: 2rem;
+.mv-card {
+  background: white; 
+  border-radius: var(--radius); 
+  padding: 40px 28px;
+  text-align: center; 
+  box-shadow: var(--shadow);
+  border-top: 5px solid  var(--coral);
+  transition: var(--transition);
 }
-.policy{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  padding: 2rem;
-  background:var(--secondary) ;
-  margin-top: 1rem;
-  align-items: center;
+.mv-card:hover { 
+  transform: translateY(-10px); 
+  box-shadow: var(--shadow-lg); 
 }
-.policy .grid1{
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--primary);
+.mv-icon { 
+  font-size: 2.5rem; 
+  margin-bottom: 16px;
+  color: var(--sky-dark);
+ }
+.mv-card h3 { 
+  font-family: var(--font-display); 
+  font-size: 1.2rem; 
+  font-weight: 700; 
+  margin-bottom: 12px; 
+  color: var(--dark); 
 }
-.policy .grid2{
-  color: var(--white);
-  font-size: 1.1rem;
+.mv-card p { 
+  font-size: 0.9rem; 
+  color: #777; 
+  line-height: 1.8; 
 }
 
-@media (max-width: 768px){
-  .values{
-    grid-template-columns: repeat(1, 1fr);
-    padding: 1rem 2rem;
+/* TIMELINE */
+.milestones-section { 
+  background: var(--cream); 
+}
+.timeline{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.timeline-card { 
+  padding: 24px; 
+  max-width: 380px; 
+  height: 200px;
+}
+.timeline-year {
+  font-family: var(--font-display); 
+  font-weight: 800; 
+  font-size: 1.4rem;
+  color: var(--coral); 
+  display: block; 
+  margin-bottom: 4px;
+}
+.timeline-card h3 { 
+  font-family: 
+  var(--font-display); 
+  font-size: 1.05rem; 
+  font-weight: 700; 
+  margin-bottom: 8px; 
+}
+.timeline-card p { 
+  font-size: 0.88rem; 
+  color: #777; 
+  line-height: 1.7; 
+}
+
+/* ACCREDITATIONS */
+.accred-section { 
+  background: linear-gradient(135deg, #e8f5e9, #f9fbe7); 
+}
+.accred-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+}
+.accred-card {
+  background: white; 
+  border-radius: var(--radius-sm);
+  padding: 28px 24px; 
+  text-align: center;
+  box-shadow: var(--shadow); 
+  transition: var(--transition);
+}
+.accred-card:hover { 
+  transform: translateY(-6px) scale(1.03); 
+  box-shadow: var(--shadow-lg); }
+.accred-icon { 
+  font-size: 2.2rem; 
+  margin-bottom: 10px; 
+  color: var(--coral);
+}
+.accred-card strong { 
+  display: block; 
+  font-family: var(--font-display); 
+  font-size: 0.95rem; 
+  color: var(--dark); 
+  margin-bottom: 4px; 
+}
+.accred-card span { 
+  font-size: 0.8rem; 
+  color: #888; 
+}
+
+@media (max-width: 900px) {
+  .story-grid {
+    grid-template-columns: 1fr; 
   }
-  .values h2{
-    text-align: start;
-    font-size:3rem;
+  .mv-grid { 
+    grid-template-columns: 1fr; 
   }
-  .vision{
-    grid-template-columns: repeat(1, 1fr);
+  .timeline{ 
+    grid-template-columns: 1fr;
   }
-  .policy{
-    grid-template-columns: repeat(1, 1fr);
+  .accred-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+@media (max-width: 600px) {
+  .team-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .accred-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .about-hero { 
+    padding: 60px 20px 0; 
   }
 }
 </style>
+
+
