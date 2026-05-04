@@ -274,10 +274,19 @@ const contactCards = [
 
 @media (max-width: 900px) {
   .contact-cards { grid-template-columns: repeat(2, 1fr); }
+  contact-form{
+    width: 200px;
+  }
 }
 @media (max-width: 600px) {
-  .contact-cards { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .contact-hero { padding: 60px 20px 0; }
+  .contact-cards { 
+    grid-template-columns: 1fr; 
+}
+ .contact-form{
+    width: 200px;
+ }
+  .contact-hero { 
+    padding: 60px 20px 0; 
+}
 }
 </style>
