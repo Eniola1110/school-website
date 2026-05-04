@@ -152,7 +152,7 @@ const checklist = [
               <h3>Application Received!</h3>
               <p>Thank you, <strong>{{ form.parentName }}</strong>! We've received your application for <strong>{{ form.childName }}</strong>.</p>
               <p>Our admissions team will contact you at <strong>{{ form.email }}</strong> within 48 hours.</p>
-              <button class="btn btn-secondary" @click="submitted=false;form=defaultForm()">Submit Another Application</button>
+              <button class="btn btn-secondary" @click="submitted=false">Submit Another Application</button>
             </div>
           </div>
         </div>
