@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
-
 const isOpen = ref(false);
 function closeMenu() {
     isOpen.value = false
@@ -14,7 +13,6 @@ function closeMenu() {
 
             <!-- nav-text -->
             <RouterLink to="/" class="logo">
-              <div class="logo-img"></div>  
               <div class="logo-text">
                 <span class="logo-main">Kell's School</span>
                 <span class="logo-subtitle">Preschool & Nursery</span>
@@ -22,10 +20,8 @@ function closeMenu() {
             </RouterLink>
 
             <!-- mobile Toggle -->
-
-           <div class="menu-icon" @click="isOpen =       !isOpen"><i class="fa fa-bars"   aria-hidden="true"></i>
+           <div class="menu-icon" @click="isOpen = !isOpen"><i class="fa fa-bars"   aria-hidden="true"></i>
             </div>
-
             <!-- nav-links -->
 
             <div class="links" :class="{ active: isOpen}">
@@ -67,9 +63,6 @@ function closeMenu() {
     gap: 10px;
     text-decoration: none;
    }
-   .logo img{
-    width: 3rem;
-   } 
    .logo-text{
     display: flex;
     flex-direction: column;

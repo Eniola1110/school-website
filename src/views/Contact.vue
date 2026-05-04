@@ -70,7 +70,7 @@ const contactCards = [
 
           <!-- Contact Form -->
           <div class="contact-form-side">
-            <div class="badge"> Send a Message</div>
+            <div class="badge contact-badge"> Send a Message</div>
             <div class="contact-form" v-if="!sent">
               <div class="form-group">
                 <label>Your Name </label>
@@ -135,7 +135,8 @@ const contactCards = [
 }
 .contact-hero-inner { 
     max-width: 750px; 
-    margin: 0 auto 60px; animation: fadeInUp 0.7s ease; 
+    margin: 0 auto 60px; 
+    animation: fadeInUp 0.7s ease; 
 }
 .contact-hero h1 { 
     font-family: var(--font-display); 
@@ -214,8 +215,14 @@ const contactCards = [
     padding: 36px; 
     box-shadow: var(--shadow-lg); 
     width: 500px;
-    justify-content: center;
-    margin: 20px auto;
+    align-items: center;
+    margin: 30px auto;
+}
+.contact-badge{
+  margin: 0 auto;
+  align-content: center;
+  display: block;
+  width: fit-content;
 }
 .form-group { 
     display: flex; 
