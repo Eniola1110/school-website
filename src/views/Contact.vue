@@ -4,7 +4,22 @@ import Footer from '@/components/Footer.vue'
 const sent = ref(false)
 const cform = reactive({ name: '', email: '', phone: '', subject: '', message: '', tour: false })
 const cValid = computed(() => cform.name && cform.email && cform.subject && cform.message)
-function sendMsg() { if (cValid.value) sent.value = true }
+function resetForm() {
+    sent.value = false
+    Object.assign(cform, {
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+    tour: false
+  })
+}
+function sendMsg() {
+    if (cValid.value) {
+        sent.value = true
+    }
+}
 
 const contactCards = [
   {
@@ -48,7 +63,7 @@ const contactCards = [
           <div class="contact-card-icon"><i :class="c.icon"></i></div>
           <h3>{{ c.label }}</h3>
           <p>{{ c.lines }}</p>
-          <a v-if="c.action" :href="c.href" class="contact-link">{{ c.action }}</a>
+          <a v-if="c.action" class="contact-link">{{ c.action }}</a>
         </div>
       </div>
     </section>
@@ -102,7 +117,7 @@ const contactCards = [
               <div class="sent-icon"></div>
               <h3>Message Sent!</h3>
               <p>Thank you <strong>{{ cform.name }}</strong>! We'll get back to you at <strong>{{ cform.email }}</strong> very soon.</p>
-              <button class="btn btn-outline" @click="sent=false;cform={name:'',email:'',phone:'',subject:'',message:'',tour:false}" style="margin-top:20px;">Send Another Message</button>
+              <button class="btn btn-outline" @click="resetForm" style="margin-top:20px;">Send Another Message</button>
             </div>
           </div>
     <section>
