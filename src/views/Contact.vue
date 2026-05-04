@@ -275,7 +275,7 @@ const contactCards = [
 @media (max-width: 900px) {
   .contact-cards { grid-template-columns: repeat(2, 1fr); }
   contact-form{
-    width: 200px;
+    width: 400px;
   }
 }
 @media (max-width: 600px) {
@@ -283,7 +283,7 @@ const contactCards = [
     grid-template-columns: 1fr; 
 }
  .contact-form{
-    width: 200px;
+    width: 400px;
  }
   .contact-hero { 
     padding: 60px 20px 0; 
