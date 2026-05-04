@@ -14,7 +14,7 @@ function closeMenu() {
 
             <!-- nav-text -->
             <RouterLink to="/" class="logo">
-              <div class="logo-img"><img src="../assets/ascendlogo.png" alt=""></div>  
+              <div class="logo-img"></div>  
               <div class="logo-text">
                 <span class="logo-main">Kell's School</span>
                 <span class="logo-subtitle">Preschool & Nursery</span>
@@ -31,7 +31,7 @@ function closeMenu() {
             <div class="links" :class="{ active: isOpen}">
             <RouterLink to="/" @click="closeMenu">Home</RouterLink>
             <RouterLink to="/about" @click="closeMenu">About Us</RouterLink>
-            <!-- <RouterLink to="/program" @click="closeMenu">Program</RouterLink> -->
+            <RouterLink to="/program" @click="closeMenu">Program</RouterLink>
             <RouterLink to="/admission" @click="closeMenu">Admission</RouterLink>
             <RouterLink to="/contact" @click="closeMenu">Contact Us</RouterLink>
             </div>

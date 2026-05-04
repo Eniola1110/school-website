@@ -15,7 +15,7 @@ const navLinks = [
         <div class="footer-body">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="footer-logo"><img src="../assets/ascendlogo.png" alt=""> Kell's School</div>
+                    <div class="footer-logo"> Kell's School</div>
                     <p>Where little minds bloom and dreams begin. A safe, joyful and nurturing space for every child.</p>
                   <div class="socials">
                     <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -86,6 +86,7 @@ const navLinks = [
 }
 .footer-logo img{
     width: 3rem;
+    background: var(--dark);
 }
 .socials {
     display: flex;
