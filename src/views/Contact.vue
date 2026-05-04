@@ -2,7 +2,7 @@
 import { ref, reactive, computed } from 'vue'
 import Footer from '@/components/Footer.vue'
 const sent = ref(false)
-const form = reactive({ name: '', email: '', phone: '', subject: '', message: '', tour: false })
+const cform = reactive({ name: '', email: '', phone: '', subject: '', message: '', tour: false })
 const cValid = computed(() => cform.name && cform.email && cform.subject && cform.message)
 function sendMsg() { if (cValid.value) sent.value = true }
 
